@@ -1,0 +1,22 @@
+body{
+    padding-top: 70px;
+    background: url("../../images/422be2c9dacb31d1f8074d2c003b3f8c.jpg");
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+}
+
+#myModal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#modal-5{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

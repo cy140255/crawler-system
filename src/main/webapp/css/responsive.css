@@ -1,0 +1,939 @@
+@media screen and (max-width: 50000px) and (min-width: 1801px) {
+    .navbar-default .navbar-nav > li:hover ul {
+        display: block !important;
+        max-width: 440px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        background-color: #fff;
+    }
+
+    .carousel {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1800px) and (min-width: 1481px) {
+
+    .carousel {
+        margin: auto;
+        width: 90%;
+    }
+
+    .navbar-default .navbar-nav > li:hover ul {
+        display: block !important;
+        max-width: 440px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        background-color: #fff;
+    }
+
+    .customers ul li {
+        margin: 0px 47px;
+    }
+
+    .companies ul li a {
+        /* max-width:99px; */
+        height: auto;
+        float: left;
+    }
+
+    .integ-info img {
+        margin-right: 13px;
+    }
+}
+
+@media screen and (max-width: 1480px) and (min-width: 1200px) {
+
+    .container {
+        width: 1180px;
+    }
+
+    .carousel {
+        margin: auto;
+        width: 90%;
+    }
+
+    .navbar-default .navbar-nav > li:hover ul {
+        display: block !important;
+        max-width: 440px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        background-color: #fff;
+    }
+
+    .customers ul li {
+        margin: 0 22px 29px;
+    }
+
+    .companies ul li a {
+        height: auto;
+        float: left;
+    }
+
+    .companies ul li {
+        margin: 0 6px;
+    }
+
+    .companies .integration ul li {
+        margin: 18px 29px;
+    }
+
+    .logo a img {
+        /* width:142px; */
+        height: 28px;
+    }
+
+    /* docs css */
+    .doc-list h4 {
+        padding-left: 20px;
+    }
+
+    .doc-list ul li a {
+        padding-left: 15px;
+    }
+
+    .doc-list h4 {
+        padding-left: 15px;
+        font-size: 16px;
+    }
+
+    .widget .help {
+        min-height: 114px;
+    }
+
+    .widget h4 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+
+    .companies .integration ul li {
+        margin: 18px;
+    }
+
+    .customers ul li {
+        margin: 0 6px;
+    }
+
+    .carousel {
+        margin: auto;
+        width: 90%;
+    }
+
+    .image-box > img {
+        width: 100%;
+    }
+
+    .carousel-inner > .item {
+        min-height: 380px;
+    }
+
+    .navbar-default .navbar-nav > li:hover ul {
+        display: block !important;
+        max-width: 440px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        background-color: #fff;
+    }
+
+    .widget {
+        padding: 55px 0;
+    }
+
+        .widget .help {
+            min-height: 140px;
+        }
+
+
+    .companies ul li a {
+        /* max-width:99px; */
+        height: auto;
+        float: left;
+    }
+
+    .health .banner .carousel-caption {
+        top: 8%;
+    }
+
+    .company-left {
+        padding: 49px 8px 0;
+    }
+
+        .company-left .released li {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+            .company-left .released li:first-child {
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
+
+    #wrapper .wizard .container {
+        width: 970px;
+        max-width: 850px;
+    }
+
+    .wizard {
+        max-width: 970px;
+    }
+
+    #progressbar hr {
+        left: 139px !important;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
+    .customers ul li {
+        margin: 0 5px 29px;
+    }
+
+    .companies ul li a {
+        /* max-width:99px; */
+        height: auto;
+        float: left;
+    }
+
+    .companies ul li {
+        margin: 0 6px;
+    }
+
+    .companies .integration ul li {
+        margin: 18px 19px;
+    }
+
+    .navbar-default .navbar-nav > li:hover ul {
+        display: block !important;
+        max-width: 440px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        background-color: #fff;
+    }
+
+    .widget .help {
+        min-height: 136px;
+    }
+
+    .doc-list h4 {
+        padding-left: 25px;
+    }
+
+    .doc-list ul li a {
+        padding-left: 20px;
+    }
+
+    .widget h4 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+
+    /*
+    .logo {
+        width: 142px;
+        height: 38px;
+    }
+    */
+
+    .container {
+        width: 750px;
+    }
+
+    .companies ul li {
+        margin: 0 6px;
+    }
+
+    .companies .integration ul li {
+        margin: 18px 6px;
+    }
+
+    .customers ul li {
+        margin: 0 13px 29px;
+    }
+
+    .kingdom {
+        width: 140px;
+    }
+
+    footer ul.links li {
+        margin: 0 7px;
+    }
+
+    .customers ul li {
+        margin: 0 57px 50px;
+    }
+
+    .companies ul li a {
+        /* max-width:99px; */
+        height: auto;
+        float: left;
+    }
+
+
+
+    .carousel {
+        margin: auto;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .content-box p {
+        font-size: 15px;
+        padding: 15px 0;
+    }
+
+    .carousel-inner > .item {
+        min-height: 323px;
+    }
+
+    .navbar-default .navbar-nav > li:hover ul {
+        display: block !important;
+        max-width: 440px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        background-color: #fff;
+    }
+
+    /* docs css */
+    .doc-list h4 {
+        padding-left: 15px;
+        font-size: 16px;
+    }
+
+    .doc-list ul li a {
+        padding-left: 10px;
+    }
+
+    .inner-head h1 {
+        padding: 22px 0px;
+    }
+
+    .widget h4 {
+        font-size: 16px;
+    }
+
+    .widget .help {
+        min-height: 117px;
+    }
+
+    .widget {
+        padding: 55px 0;
+    }
+
+        .widget p {
+            font-size: 14px;
+        }
+
+    .search input {
+        width: 78%;
+    }
+
+    .health .banner .carousel-caption {
+        top: 2%;
+    }
+
+    .company-left .released li {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+        .company-left .released li:first-child {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+    .company-left {
+        padding: 20px 0px 0px;
+    }
+
+    .integ-tabs .tab-content {
+        padding: 33px 20px 0;
+    }
+
+    .content-col {
+        padding: 20px;
+    }
+
+    .navbar-default .navbar-nav > li.login a {
+        min-width: 85px;
+    }
+
+    .navbar-default .navbar-nav > li.sign a {
+        min-width: 85px;
+    }
+
+    #wrapper .wizard .container {
+        width: 750px;
+        max-width: 750px;
+    }
+
+    .wizard {
+        max-width: 970px;
+    }
+
+    #progressbar hr {
+        left: 122px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .companies ul li {
+        margin: 0 6px;
+    }
+
+    .kingdom {
+        width: 140px;
+    }
+
+    footer ul.links li {
+        margin: 0 7px;
+    }
+
+    .customers ul li {
+        margin: 0 9% 29px;
+    }
+
+    .companies ul li a {
+        /* max-width:99px; */
+        height: auto;
+        float: left;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .brand {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px !important; /* 50% of your logo width */
+        display: block;
+    }
+
+    .carousel {
+        margin: auto;
+        width: 90%;
+    }
+
+    .content-box a {
+        float: none;
+        display: inline-block;
+    }
+
+    .image-box {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .content-box p {
+        font-size: 15px;
+        padding: 15px 0;
+    }
+
+    .integration {
+        border-bottom: 1px solid #ebebec;
+        border-right: 0px none;
+    }
+
+    .feature.second {
+        border-top: 1px solid #ebebec;
+        border-bottom: 1px solid #ebebec;
+        border-left: 0px none;
+        border-right: 0px none;
+    }
+
+    .container {
+        width: auto;
+    }
+
+    .logo a img {
+        /* width:142px; */
+    }
+
+    .kingdom {
+        margin: auto;
+        float: none;
+    }
+
+    .ftr-links ul.links {
+        float: left;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        padding: 20px 0px;
+    }
+
+        .ftr-links ul.links li {
+            float: none;
+            display: inline-block;
+            text-align: center;
+            float: none;
+            margin: 10px 10px;
+        }
+
+    footer .copy {
+        text-align: center !important;
+    }
+
+    .navbar-header {
+        display: block;
+            margin-top: -40px;
+    }
+
+    .log {
+        float: right;
+        margin: 20px 0px;
+    }
+
+    .navbar-default .navbar-toggle {
+        background-color: #42bd41;
+    }
+
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #fff;
+        }
+
+        .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+            background-color: #000;
+        }
+
+    .hdr-right {
+        width: 100%;
+        position: relative;
+    }
+
+    .menus {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .state {
+        padding-top: 15px;
+        padding-left: 10px;
+        position: absolute;
+        z-index: 999;
+        display:none;
+    }
+
+    .menus .navbar.navbar-default {
+        margin: 0px;
+    }
+
+    .navbar.navbar-default {
+        width: 100%;
+    }
+
+    .menus .navbar.navbar-default .navbar-header {
+        margin: 0px 0px;
+    }
+
+    .navbar-toggle {
+        margin-right: 0px;
+    }
+
+    .navbar.navbar-default .container-fluid {
+        padding: 0px 15px;
+    }
+
+    .navbar.navbar-default .navbar-collapse {
+        padding: 0px 15px;
+    }
+
+    .nav > li {
+        border-bottom: 1px solid #fff;
+    }
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+        background-color: #42bd41;
+        color: #fff;
+    }
+
+    .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+        background-color: #42bd41;
+        color: #fff;
+    }
+
+    .nav > li > a:focus, .nav > li > a:hover {
+        background-color: #42bd41;
+        color: #fff;
+    }
+
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+        background-color: #42bd41;
+        color: #fff;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+        background-color: #42bd41;
+        color: #fff;
+    }
+
+    .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-nav .open .dropdown-menu > li > a:hover {
+        background-color: #42bd41;
+        color: #fff;
+    }
+
+    .nav.navbar-nav {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .dropdown-menu {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+
+    .dropdown-menu > span {
+        display: none;
+    }
+
+    .dropdown-menu > li {
+        border-top: 1px solid #fff;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        padding: 10px 13px;
+        font: 400 15px/20px 'Roboto', sans-serif;
+        color: #fff;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        padding: 10px 13px;
+    }
+
+    .carousel-control {
+        z-index: 9999;
+    }
+
+    .carousel-control {
+        top: 41%;
+    }
+
+    /* docs css */
+    .widget .widz {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 60px;
+        padding-bottom: 60px;
+    }
+
+    .widget .widz:last-child {
+        border: 0px none;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .docs-content {
+        float: none;
+        padding: 0px 0px;
+    }
+
+    .docs-cont {
+        border: 0px none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .widget .rest:last-child {
+        border-top: 1px solid #ddd;
+        margin-top: 60px;
+        padding-top: 60px;
+    }
+
+    .sidebar {
+        padding: 0px 15px;
+        margin-top: 30px;
+    }
+
+    .integrate .npd {
+        padding: 0px 15px 20px;
+    }
+
+    .integrate .src {
+        padding: 0px 15px 20px;
+    }
+
+    .integ-info {
+        text-align: center;
+    }
+
+    .integ-info img {
+        float: none;
+        margin: 0px;
+    }
+
+    /* login css */
+    #login {
+        background-color: #fff;
+        border: 1px solid #dedede;
+        left: 0;
+        margin: 5%;
+        max-width: 100%;
+        position: inherit;
+        text-align: center;
+        top: 0;
+        width: 90%;
+        float: left;
+    }
+
+    #wrapper .signup {
+        background-color: #fff;
+        border: 1px solid #dedede;
+        left: 0;
+        margin: 5%;
+        max-width: 100%;
+        position: inherit;
+        text-align: center;
+        top: 0;
+        width: 90%;
+        float: left;
+    }
+
+    .health .banner .item {
+        min-height: 341px;
+    }
+
+    .health .banner .carousel-caption {
+        top: 2%;
+    }
+
+    .health .banner .carousel-caption p br {
+        display: none;
+    }
+
+    .company-left img {
+        width: 100%;
+    }
+
+    .company-detail {
+        border-left: 0px none;
+        border-top: 1px solid #dedede;
+    }
+
+    .reviews h6 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .reviews {
+        text-align: center;
+    }
+
+    .reviews span {
+        float: none;
+    }
+
+    .navbar-default .navbar-nav > li.login a, .navbar-default .navbar-nav > li.sign a {
+        border: 0 none;
+        float: none;
+        margin: 0;
+        min-width: inherit;
+        padding: 10px 13px;
+        text-align: left;
+        background: none;
+        border-radius: 0px;
+    }
+
+    .fornav {
+        padding: 0px 15px 0px 20px;
+    }
+
+    #progressbar hr {
+        left: 17% !important;
+        width: 67% !important;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    .state {
+        display:none;
+    }
+
+    .companies ul li {
+        margin: 0 6px 30px;
+    }
+
+    .carousel-inner > .item {
+        min-height: 549px;
+    }
+
+    .integrate .npd {
+        width: 100%;
+    }
+
+    .integrate .src {
+        width: 100%;
+    }
+
+    #login p {
+        padding: 10px 0 0;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .login-box {
+        border-top: 1px solid #dedede;
+        float: left;
+        padding: 39px;
+        width: 100%;
+    }
+
+    .health .banner .item {
+        min-height: 381px;
+    }
+
+    .company-left .released li {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+        .company-left .released li:first-child {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+    .company-left {
+        padding: 30px 4% 0;
+    }
+
+    .content-col {
+        padding: 30px 4% 0;
+    }
+
+    .integ-info h5 {
+        margin-bottom: 10px;
+    }
+
+    .integ-tabs .nav-tabs > li > a {
+        padding: 8px 5px;
+        font-size: 14px;
+    }
+
+    .integ-tabs .tab-content {
+        padding: 30px 4% 0;
+    }
+}
+
+@media screen and (max-width:639px) {
+    #progressbar li {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    #progressbar {
+        padding: 20px 20px;
+    }
+
+    #msform fieldset {
+        padding: 20px;
+    }
+
+    #msform .form-group {
+        padding: 0px;
+        width: 100%;
+    }
+
+    #progressbar hr {
+        display: none;
+        height: 233px;
+        left: 50% !important;
+        margin-left: -1px;
+        top: 67px;
+        width: 2px !important;
+    }
+}
+
+@media screen and (max-width:767px) and (min-width: 641px) {
+    .carousel-inner > .item {
+        min-height: 732px;
+    }
+}
+
+@media screen and (max-width:640px) and (min-width: 601px) {
+    .carousel-inner > .item {
+        min-height: 648px;
+    }
+}
+
+@media screen and (max-width:600px) and (min-width: 540px) {
+    .carousel-inner > .item {
+        min-height: 651px;
+    }
+
+    #login p {
+        padding: 10px 0 0;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .login-box {
+        border-top: 1px solid #dedede;
+        float: left;
+        padding: 39px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:539px) and (min-width:480px) {
+    .carousel-inner > .item {
+        min-height: 584px;
+    }
+
+    #login p {
+        padding: 10px 0 0;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .login-box {
+        border-top: 1px solid #dedede;
+        float: left;
+        padding: 39px;
+        width: 100%;
+    }
+
+    .health .banner .item {
+        min-height: 381px;
+    }
+
+    .company-left .released li {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+        .company-left .released li:first-child {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+}
+
+@media screen and (max-width:539px) {
+    .login-box {
+        padding: 15px;
+    }
+
+    #login form .input-group .input-group-addon {
+        min-width: 86px;
+    }
+}

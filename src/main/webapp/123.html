@@ -1,0 +1,1021 @@
+<!DOCTYPE HTML><!--STATUS OK-->
+<html class="expanded">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>传智播客：作业PHP数据库-如何实现站点统计_百度文库</title>
+    <script>    // 性能优化：打点标识title    window.viewTime = {        t: new Date().getTime()    };    // 性能优化：打点标识title end    window.alogObjectConfig = {        sample: '0.2',         product: '112',        page: '112_5',        monkey_page: 'wenku-view',        speed_page: '',        speed: {            sample: '0.1'        },         monkey: {            sample: '0.1'        },         exception: {             sample: '0.1'        },         feature: {            sample: '0.1'        },         cus: {            sample: '0.1'        },         csp: {            sample: '0.2',            'default-src': [                {match: '*bae.baidu.com', target: 'Accept,Warn'},                {match: '*.baidu.com,*.bdstatic.com,*.baidustatic.com,*.baiduimg.com,*.bdimg.com,localhost,*.hao123.com,*.hao123img.com', target: 'Accept'},                {match: /^(127|172|192|10)(\.\d+){3}$/, target: 'Accept'},                {match: '*', target: 'Accept,Warn'}            ]        }    };    void function(a,b,c,d,e,f,g){a.alogObjectName=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=a[e].l||+new Date,d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d;var h=!0;if(a.alogObjectConfig&&a.alogObjectConfig.sample){var i=Math.random();a.alogObjectConfig.rand=i,i>a.alogObjectConfig.sample&&(h=!1)}h&&(f=b.createElement(c),f.async=!0,f.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),g=b.getElementsByTagName(c)[0],g.parentNode.insertBefore(f,g))}(window,document,"script","/hunter/alog/alog.min.js","alog"),void function(){function a(){}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date),alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:a,tti:a,page_ready:a}}();    void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);</script>
+    <script type="text/javascript">        var PLAYER_LOAD_START = (new Date()).getTime();    </script>
+    <script>            (function () {
+        var root = document.documentElement, screenClassName = +screen.width > 1024 ? 'max' : 'min';
+        root.className += ' screen-' + screenClassName;
+    })();        </script>
+    <meta name="description" content="在线互动式文档分享平台，在这里，您可以和千万网友分享自己手中的文档，全文阅读其他用户的文档，同时，也可以利用分享文档获取的积分下载文档 "/>
+    <script type="text/javascript">!function (n) {
+        var t = {}, i = {};
+        i._data = t, i.get = function (n) {
+            return t[n]
+        }, i.set = function (n, i) {
+            if ("string" == typeof n) t[n] = i; else for (var r in n)n.hasOwnProperty(r) && (t[r] = n[r])
+        }, n.__fisData = i
+    }(window);</script>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkcommon/widget/ui/css_core/ui/core_v3/core_v3_3e93ff8.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkcommon/pkg/pkg_wkcommon_base_52b4ae0.css"/>
+    <link rel="stylesheet" type="text/css" href="//wkstatic.bdimg.com/static/wktrade/pkg/cashiercommon_eb29643.css"/>
+    <link rel="stylesheet" type="text/css" href="//wkstatic.bdimg.com/static/wkview/pkg/viewcommon_a2e7d5b.css"/>
+    <link rel="stylesheet" type="text/css" href="//wkstatic.bdimg.com/static/wkview/pkg/htmlview_b8e0a52.css"/>
+    <link rel="stylesheet" type="text/css" href="//wkstatic.bdimg.com/static/wkview/pkg/newhtmlview_e61262b.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkcommon/pkg/pkg_wkcommon_htmlReader_3ee7c20.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/view_recom_thirdad/goldclue-content/goldclue-content_774c74e.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/view_recom_thirdad/endPageGoldClueAd/endPageGoldClueAd_1eadf1c.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/component/tab/tab_3422007.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/component/kgtree/kgtree_3b3146d.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/component/doclist/doclist_b7814d3.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/view/view_99984cf.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/raw_income/raw_income_10a6edf.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/raw_income/native_income/native_income_0aba162.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="//wkstatic.bdimg.com/static/wkview/widget/jigou_tuijian/jigou_tuijian_2f34db0.css"/>
+</head>
+<script> alog('speed.set', 'ht', +new Date); </script>
+<body>
+<script>(function (Data) {
+    var smallFlowContent = [];
+    smallFlowContent.push('xll_search_download' + '=' + '1');
+    smallFlowContent.push('xll_view_newviewtpl' + '=' + '0');
+    Data.set('smallFlowContent', smallFlowContent);
+}(window.__fisData));</script>
+<script>    (function (Data) {
+    var WkInfo = Data.get("WkInfo") || {};
+    var isLogin = "";
+    WkInfo.PageInfo = {
+        isLogin: !!isLogin,
+        copyright: "1",
+        tpl: "wk_info",
+        docTypeList: [["none", ""], ["doc", "Word\u6587\u6863"], ["xls", "Excel\u8868\u683c"], ["ppt", "PPT\u6587\u7a3f"], ["doc", "Word\u6587\u6863"], ["xls", "Excel\u8868\u683c"], ["ppt", "PPT\u6587\u7a3f"], ["pdf", "pdf\u6587\u6863"], ["txt", "txt\u6587\u6863"], ["wps", "Word\uff08\u91d1\u5c71\uff09"], ["et", "Excel\uff08\u91d1\u5c71\uff09"], ["dps", "PPT\uff08\u91d1\u5c71\uff09"], ["vsd", "Visio\u7ed8\u56fe"], ["rtf", "rtf\u6587\u6863"], ["pot", "PPT\u6a21\u677f"], ["pps", "PPT\u653e\u6620"], ["epub", "ePub\u6587\u6863"]]
+    };
+    ;
+    Data.set("WkInfo", WkInfo);
+}(window.__fisData));</script>
+<div class="wk-other-new-cntent">
+    <div class="user-bar user-bar-new">
+        <ul class="inner">
+            <li><a href="https://www.baidu.com/" class="logSend"
+                   data-logsend='{"send":["general","bdindex",{"login":1}]}' alog-action="userbar.loginbdhome">百度首页</a>
+            </li>
+            <li><a href="https://passport.baidu.com/v2/?login" id="login" class="logSend"
+                   data-logsend='{"send":["view","loginclick"]}' alog-action="userbar.login">登录</a><a
+                    href="https://passport.baidu.com/v2/?reg&tpl=do&u=http%3A%2F%2Fwenku.baidu.com%2F" id="reg"
+                    target="_blank" class="logSend" data-logsend='{"send":["view","regclick"]}'
+                    alog-action="userbar.register">注册</a></li>
+            <li class="fankui"><a href="/feedback" target="_blank">意见反馈</a></li>
+            <li><a href="/apps?fr=1011" target="_blank" alog-action="userbar.logoutapp">下载客户端</a></li>
+        </ul>
+    </div>
+    <div class="s_tab" alog-group="switch.productline"><a data-href="http://www.baidu.com"
+                                                          href="http://www.baidu.com/s?wd=word&fr=wenku"
+                                                          class="logSend "
+                                                          data-logsend='{"send":["general","toptablink",{"to":"webpage"}]}'
+                                                          wdfield="wd" onmousedown="setHeadUrl(this)">网页</a><a
+            data-href="http://news.baidu.com" href="http://news.baidu.com/ns?word=word&tn=news&cl=2&rn=20&ct=1&fr=wenku"
+            class="logSend" data-logsend='{"send":["general", "toptablink",{"to":"news"}]}' wdfield="word"
+            onmousedown="setHeadUrl(this)">新闻</a><a data-href="http://tieba.baidu.com"
+                                                    href="http://tieba.baidu.com/f?kw=word&fr=wenku" class="logSend "
+                                                    data-logsend='{"send":["general","toptablink",{"to":"tieba"}]}'
+                                                    wdfield="kw" onmousedown="setHeadUrl(this)">贴吧</a><a
+            data-href="http://zhidao.baidu.com"
+            href="http://zhidao.baidu.com/q?word=word&ct=17&pn=0&tn=ikaslist&rn=10&lm=0&fr=wenku" class="logSend"
+            data-logsend='{"send":["general","toptablink",{"to":"zhidao"}]}' wdfield="word"
+            onmousedown="setHeadUrl(this)">知道</a><a data-href="http://music.baidu.com"
+                                                    href="http://music.baidu.com/search?&fr=wenku&key=word"
+                                                    class="logSend "
+                                                    data-logsend='{"send":["general","toptablink",{"to":"music"}]}'
+                                                    wdfield="key" onmousedown="setHeadUrl(this)">音乐</a><a
+            data-href="http://image.baidu.com"
+            href="http://image.baidu.com/i?ct=201326592&cl=2&nc=1&lm=-1&st=-1&tn=baiduimage&istype=2&fm=&pv=&z=0&word=word&fr=wenku"
+            class="logSend " data-logsend='{"send":["general","toptablink",{"to":"image"}]}' wdfield="word"
+            onmousedown="setHeadUrl(this)">图片</a><a data-href="http://v.baidu.com"
+                                                    href="http://v.baidu.com/v?fr=wenku&ct=301989888&s=25&word=word"
+                                                    class="logSend "
+                                                    data-logsend='{"send":["general","toptablink",{"to":"video"}]}'
+                                                    wdfield="word" onmousedown="setHeadUrl(this)">视频</a><a
+            data-href="http://map.baidu.com" href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s&wd=word&fr=wenku"
+            class="logSend" data-logsend='{"send":["general","toptablink",{"to":"map"}]}' wdfield="wd"
+            onmousedown="setHeadUrl(this)">地图</a><b>文库</b><b class="wk-right-line">|</b></div>
+</div>
+<div id="vip-cms-doc-list" style="display:none;"><p class="pop-msg-text">文库君已有近万本图书，还会不断收罗精品免费内容双手奉上，请及时续费哦！</p>
+    <div class="pop-msg-new-book">
+        <div class="pop-msg-book-recmd">
+            <div class="pop-msg-recmd-link"><a href="//wenku.baidu.com/vip/list/104" target="_blank">经济管理</a>&nbsp&nbsp&nbsp<a
+                    href="//wenku.baidu.com/vip/list/101" target="_blank">职场励志</a></div>
+            <span>两大类热门资源免费畅读</span></div>
+        <a href="/trade/browse/cashier?type=2&fr=zhaohui" class="pop-msg-charge-btn"></a>
+        <div class="under-btn-tips">续费一年阅读会员，立省24元！</div>
+    </div>
+</div>
+<div id="doc" class="page">
+    <div id="hd">
+        <style type="text/css">/*    @require wkview:widget/down_doc/down_doc.less    @require wkview:widget/api_share/api_share.less    @require wkview:widget/ui/panel/panel.less*/    </style>
+        <script type="text/javascript">        (function (Data) {
+            Data.set("isHitVipDocLimited", +'');
+            var WkInfo = Data.get("WkInfo") || {};            //RD文库阅读页异步操作重构            WkInfo.Urls = {                'submitPriceUpdate':'\/doc\/submit\/priceUpdate'||'/submit',//修改标价                'submitClassUpdate':'\/doc\/submit\/classUpdate'||'/submit',//修改分类                'submitValue':'\/doc\/submit\/value'||'/submit',//评分                'submitDownload':'\/user\/submit\/download'||'/submit',//下载                'submitCollect':'\/user\/submit\/collect'||'/submit',//收藏                'interfaceGetFoldSon':'\/user\/interface\/getFoldSon'||'/roomasync',//获取文件夹结构                'interfaceGetViewFoldInfo':'\/user\/interface\/getViewFoldInfo'||'/roomasync',//外链的文件夹结构                'submitFoldCreate':'\/user\/submit\/foldCreate'||'/roomasync',//文件夹创建                'submitDocMove':'\/user\/submit\/docMove'||'/roomasync',//移动                'submitBookmark':'\/user\/submit\/bookmark'||'/submit',//书签                'interfaceGetRepeatDown':'\/user\/interface\/getRepeatDown'||'/async'//重复文档检查            };            WkInfo.DocInfo = {                'player' : 'html',                'creater'   : '%B4%AB%D6%C7%B2%A5%BF%CDitcast', //贡献者                'title'   : '传智播客：作业PHP数据库-如何实现站点统计', //文档标题                'docId'   : '5aefe29427fff705cc1755270722192e44365843', //文档格式                'docType' : 'doc', //文档格式                'docTypeNum' : '1', //文档格式号                'flag' : '3',                'cats'    : '3-63-161-0'||'0-0-0-0', //文档分类                'cid1'    : '3', //文档分类                'cid2'    : '63', //文档分类                'cid3'    : '161', //文档分类                'cid4'    : '0', //文档分类                'price'   : '0', //文档价格                'size'    : '284672', //文档价格                'rateNum' : '0', //文档评分                'totalPageNum' : '3', //文档评分                'catal'   : '0',                'relateDoc' : '0',                'otherLikeDoc' : '0',                'relateAlblum' : '0',                'sameSeriesDoc' : '4',                'isInRoom' : '0',                'freeDoc' : '',                'freeMoney' : '',                'readerType' : 'html',                'payPrice' : parseInt('0',10), //文档价格                'isPaymentDoc' : parseInt('0',10), //是否为付费文档                'freepagenum' : parseInt('',10), //免费阅读页数                'ispaied' : parseInt('',10), //是否已经购买                'writername' : '', //付费文档作者名称                'isdownloaded' : parseInt('',10), //是否允许下载                'isPrivate' : !!'',//是否为私有文档                'vip_free_buy' : +'0',                'is_vip_free_doc' : +'0',                'is_only_vip_doc' : +'',                'vip_price' : + '',                'vip_type' : +'0',                // tianzheng 教育会员 明哲让我加的                'is_edu_doc' : +'',                'edu_vip_type' : +'0',                'jiaoyu_vip_type' : +'0',                'docTicket':+'0',                'JOINVIP_URL' : '/vip/privilege',                'is_discount_doc' : +'0',                'isInRoomButDeletedByCreater':!!'',//                'goodsPayStatus' : 'notPaymentDoc',                'price_supported_devices_info' : '',                'confirm_price' : +'',                'wk2yd' : '0',                'docDesc': '',                'hasImage': '' || 0,                // 机构文档第二篇打折，必须数据                'org_discount_status':+'-1',                'org_discount_price':'',                'org_title':'传智播客',                'org_engName': 'itheima' || '',                'isOrgDoc': '1' || 0,                'is_exam_link': '0',                'readerVersion' : (function(){                    var version = '3';                        if(version!=1&&version!=2&&version!=3){                            version=1;                        }                    return version;                    })(),                // 行业报告定制                'hangyebaogao_customized': +'' || 0                };            WkInfo.PaceInfo = {                'rate'   : '30'            };            WkInfo.docType={                '0' : ''                ,'1' : 'doc'                ,'2' : 'xls'                ,'3' : 'ppt'                ,'4' : 'docx'                ,'5' : 'xlsx'                ,'6' : 'pptx'                ,'7' : 'pdf'                ,'8' : 'txt'                ,'9' : 'wps'                ,'10': 'et'                ,'11': 'dps'                ,'12': 'vsd'                ,'13': 'rtf'                ,'14': 'pot'                ,'15': 'pps'                ,'16': 'epub'            };            //协同推荐数据，暂时供下载后推荐使用            WkInfo.otherLikeDocRec = [                            ];            //判断是否使用Bcs请求的地址            WkInfo.htmlBcs = 1;            //htmlBcs迁移请求地址            WkInfo.htmlUrls = '{\x22ttf\x22:[{\x22pageIndex\x22:1,\x22param\x22:\x22&md5sum=e0997f600c6707c6c31e2909c5ec09d8&range=0-33923&sign=05ccd73721\x22},{\x22pageIndex\x22:2,\x22param\x22:\x22&md5sum=e0997f600c6707c6c31e2909c5ec09d8&range=33924-55726&sign=05ccd73721\x22},{\x22pageIndex\x22:3,\x22param\x22:\x22&md5sum=e0997f600c6707c6c31e2909c5ec09d8&range=55727-&sign=05ccd73721\x22}],\x22json\x22:[{\x22pageIndex\x22:1,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.json?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2Fcbfc4fa14d9232f13bd62c9bb88062f2ea3568888dcc422bd1fd2aa4ef7532fa&x-bce-range=0-21971&token=e13f690aba1bb492bd7ecae55a95d7fc9534fb7289b72a3b6213d89d1f655e13&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:2,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.json?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2Fcbfc4fa14d9232f13bd62c9bb88062f2ea3568888dcc422bd1fd2aa4ef7532fa&x-bce-range=21972-34161&token=e13f690aba1bb492bd7ecae55a95d7fc9534fb7289b72a3b6213d89d1f655e13&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:3,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.json?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2Fcbfc4fa14d9232f13bd62c9bb88062f2ea3568888dcc422bd1fd2aa4ef7532fa&x-bce-range=34162-&token=e13f690aba1bb492bd7ecae55a95d7fc9534fb7289b72a3b6213d89d1f655e13&expire=2017-09-13T12:24:16Z\x22}],\x22png\x22:[{\x22pageIndex\x22:1,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.png?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2F9ad305ce67ae7d2464c6cc8da9d370076df2a7f2b18ded27830f9b9e2e6a7ab6&x-bce-range=0-23873&token=65ef5da1bedab78a54bb0c0e1ad0de8fb1bdc2278848e4d51617f5eec2b18483&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:2,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.png?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2F9ad305ce67ae7d2464c6cc8da9d370076df2a7f2b18ded27830f9b9e2e6a7ab6&x-bce-range=23874-104340&token=65ef5da1bedab78a54bb0c0e1ad0de8fb1bdc2278848e4d51617f5eec2b18483&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:3,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.png?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2F9ad305ce67ae7d2464c6cc8da9d370076df2a7f2b18ded27830f9b9e2e6a7ab6&x-bce-range=104341-&token=65ef5da1bedab78a54bb0c0e1ad0de8fb1bdc2278848e4d51617f5eec2b18483&expire=2017-09-13T12:24:16Z\x22}]}';            //教师节活动临时添加，如果为url，则添加免费下载按钮            //WkInfo.teacher_free_download = '';            WkInfo.verify_user_info ='';            WkInfo.isUgcTest = Boolean('');            WkInfo.isRealName = parseInt('0' + '0' + '0');            Data.set("WkInfo",WkInfo);                                    // ''            Data.set("isDialogCashier", "");        })(window.__fisData);    </script>
+        <div class="header-wrap">
+            <div class="box top-search-box  " style="width: 1200px;">
+                <div class="media media-new-150"><a href="/?fr=logo" alog-action="wk.logo"><img
+                        src="//wkstatic.bdimg.com/static/wkcommon/widget/header/search_box/images/logo-wk-135-44_0113321.jpg"
+                        width="135" height="44" alt="百度文库_文档分享平台"></a></div>
+                <span id="h-hide" style="display: none;"></span>
+                <div class="content" id="adbg">
+                    <div class="s_nav s_nav-new"></div>
+                    <form action="/search" name="ftop" id="topSearchBox" method="get"><span
+                            class="s_ipt_wr s_ipt_wr-with535"><input id="kw" name="word" class="s_ipt" maxlength="256"
+                                                                     tabindex="1" value="传智播客：作业PHP数据库-如何实现站点统计"
+                                                                     data-default="" autocomplete="off"><span
+                            class="s_ipt_plhd" id="kw-plhd">搜试试</span><span class="hot-box hide">7</span><span
+                            class="arrow-box"></span></span><span class="s_btn_wr"><input type="submit" id="sb"
+                                                                                          value="搜索文档"
+                                                                                          class="s_btn s_btn_wr_click"></span><span
+                            class="s_tools"><a class="sp-xs-tips log-xsend" data-logxsend='[1, 100955, {"index":1}]'
+                                               href="/task/browse/rewardbegin?fr=home" target="_blank">悬赏文档</a></span>
+                        <div class="g-sl" alog-group="switch.doctype"><label for="t_all"><input type="radio" name="lm"
+                                                                                                value="0"
+                                                                                                class="type-check"
+                                                                                                id="t_all"
+                                                                                                checked>全部</label><label
+                                for="t_doc"><input type="radio" name="lm" value="1" class="type-check"
+                                                   id="t_doc">DOC</label><label for="t_ppt"><input type="radio"
+                                                                                                   name="lm" value="3"
+                                                                                                   class="type-check"
+                                                                                                   id="t_ppt">PPT</label><label
+                                for="t_txt"><input type="radio" name="lm" value="5" class="type-check"
+                                                   id="t_txt">TXT</label><label for="t_pdf"><input type="radio"
+                                                                                                   name="lm" value="2"
+                                                                                                   class="type-check"
+                                                                                                   id="t_pdf">PDF</label><label
+                                for="t_xls"><input type="radio" name="lm" value="4" class="type-check"
+                                                   id="t_xls">XLS</label>
+                            <div style="clear:both"></div>
+                        </div>
+                        <input type="hidden" name="od" value="0"><input type="hidden" name="fr" value="top_home"><input
+                                type="hidden" name="ie" value="gbk"></form>
+                </div>
+                <a class="page-banner page-banner-new log-xsend" id="banurl" data-logxsend='[1, 101282, {index: 4}]'
+                   href="" target="_blank"></a><span class="ad-icon">广告</span></div>
+            <div class="nav-wrap mb10">
+                <div class="ui-nav">
+                    <div class="inner clearfix">
+                        <ul class="clearfix main-nav" alog-group="general.nav">
+                            <li id="nav-index"><a href="/?fr=nav">首页</a></li>
+                            <li id="zone-menu"><a href="javascript:void(0);">分类</a><b class="d-ic"></b></li>
+                            <li id="jingpin-menu"><a href="javascript:void(0);">精品内容</a><b class="verify-d-ic"></b>
+                                <div class="drop-sub-nav" id="drop-sub-nav"><a target="_blank"
+                                                                               href="//wenku.baidu.com/edu"
+                                                                               class="log-xsend"
+                                                                               data-logxsend="[1, 101246]">教育文库</a><a
+                                        target="_blank" class="log-xsend" data-logxsend="[1, 101214]"
+                                        href="//wenku.baidu.com/video/browse/category">文库视频</a><a target="_blank"
+                                                                                                  href="//tiku.baidu.com/"
+                                                                                                  data-logxsend="[1, 100761]"
+                                                                                                  class="log-xsend">百度题库</a><a
+                                        target="_blank" class="log-xsend" data-logxsend="[1, 100799]" href="/jingpin">精品文库</a><a
+                                        target="_blank" href="/org/zone?zoneid=2" class="log-xsend"
+                                        data-logxsend="[1, 101247]">学术专区</a><a target="_blank"
+                                                                               href="/org/browse/meeting"
+                                                                               class="log-xsend"
+                                                                               data-logxsend="[1, 101248]">会议中心</a>
+                                </div>
+                            </li>
+                            <li id="nav-edu"><a href="//wenku.baidu.com/wenkuverify" target="_blank" class="log-xsend"
+                                                data-logxsend="[1, 101253]">个人合作<span class="ui-bz-hot-ic"
+                                                                                      style="position: absolute; top: 2px;"></span></a>
+                            </li>
+                            <li class="last" id="jghz-menu"><a href="javascript:void(0);"
+                                                               style="cursor:default;">机构合作</a><b
+                                    class="verify-d-ic"></b>
+                                <div class="drop-sub-nav" id="jghz-drop-sub-nav"><a target="_blank" href="/org/index">机构认证</a><a
+                                        target="_blank" href="https://eduai.baidu.com/intro">教育云平台</a><a target="_blank"
+                                                                                                         href="https://jiaoyu.baidu.com/topic/bsplatform/tob_doc?fr=home">品牌推广</a><a
+                                        target="_blank"
+                                        href="https://jiaoyu.baidu.com/topic/bsplatform/technical_cooperation"
+                                        data-logxsend="[1, 100841]" class="log-xsend">技术服务</a><a target="_blank"
+                                                                                                 href="https://jiaoyu.baidu.com/topic/bsplatform/agentrecruitment"
+                                                                                                 data-logxsend="[1, 100958]"
+                                                                                                 class="log-xsend">代理招募</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="main-nav side-nav clearfix">
+                            <li><a href="/user/browse/vip/" target="_blank" class=" wkmember-li-top"><b
+                                    class="n-ic wkmember-ic"></b><b class="havenew-ic" style="display:none;"></b></b>
+                                文库VIP&nbsp;&nbsp;</a><b class="verify-d-ic"></b>
+                                <div class="drop-sub-nav member-sub-nav" id="drop-sub-nav"><a target="_blank"
+                                                                                              href="/user/browse/jiaoyuvipzone"
+                                                                                              data-logxsend="[1, 101157]"
+                                                                                              class="jiaoyu-vip log-xsend">百度教育VIP<span
+                                        class="ui-bz-new-ic"></span></span></a><a target="_blank"
+                                                                                  href="/user/browse/newvipfreedoczone"
+                                                                                  data-logxsend="[1, 100831]"
+                                                                                  class="log-xsend">VIP免费专区</span></a><a
+                                        target="_blank" href="/user/browse/annualvip" data-logxsend="[1, 100592]"
+                                        class="log-xsend">VIP福利专区</span></a><a target="_blank" href="/duihuan">兑换VIP</a>
+                                </div>
+                            </li>
+                            <li class="last"><a href="/user/mydocs?fr=nav" id="nav-myWenku" class="logSend"
+                                                data-logSend='{"send":["general","usercenter",{"refer":"navigator"}]}'><b
+                                    class="n-ic mywk-ic"></b>个人中心</a><b class="verify-d-ic" id="mark-arrow"></b>
+                                <div class="drop-sub-nav" id="reward-task"><a target="_blank"
+                                                                              href="/task/browse/rewardlist">悬赏任务</a><a
+                                        target="_blank" href="/task/browse/daily">每日任务</a><a class="" target="_blank"
+                                                                                             href="/wenkuverify">专业认证</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="cate hide" id="wk-all-cate">
+                            <dl>
+                                <dt><b class="t-tag cg"></b> <a href="/portal/browse/zoneedu" target="_blank">教育频道<b
+                                        class="li-aw n-ic"></b></a></dt>
+                                <dd><a href="http://youke.baidu.com/youke/eduplan/list/8_s0_g0_v87" target="_blank"
+                                       class="log-xsend" data-logxsend='[1, 100647, {"index":"1"}]'>小学 </a> <a
+                                        href="http://youke.baidu.com/youke/eduplan/list/9_s0_g0_v0" target="_blank"
+                                        class="log-xsend" data-logxsend='[1, 100647, {"index":"2"}]'>初中 </a> <a
+                                        href="http://youke.baidu.com/youke/eduplan/list/31_s0_g0_v0" target="_blank"
+                                        class="log-xsend" data-logxsend='[1, 100647, {"index":"3"}]'>高中 </a> <a
+                                        href="http://gaokao.baidu.com/?&channel=pc6" target="_blank" class="log-xsend"
+                                        data-logxsend='[1, 100647, {"index":"4"}]'>高考题库 </a></dd>
+                            </dl>
+                            <dl>
+                                <dt><b class="t-tag cc"></b> <a href="/pro/index" target="_blank">专业资料<b
+                                        class="li-aw n-ic"></b></a></dt>
+                                <dd><a href="//wenku.baidu.com/list/175?l=4.3.6" target="_blank">人文社科</a> <a
+                                        href="/list/63" target="_blank">IT/计算机</a> <a href="/list/230" target="_blank">工程科技</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><b class="t-tag cg"></b> <a href="/form/index" target="_blank">实用文档<b
+                                        class="li-aw n-ic"></b></a></dt>
+                                <dd><a href="/list/71" target="_blank">求职/职场</a> <a href="/list/77" target="_blank">总结/汇报</a>
+                                    <a href="/list/73" target="_blank">党团工作</a></dd>
+                            </dl>
+                            <dl>
+                                <dt><b class="t-tag cc"></b> <a href="/pgc/browse/exam" target="_blank">资格考试<b
+                                        class="li-aw n-ic"></b></a></dt>
+                                <dd><a href="/portal/browse/exam/TOEFL" style="position:relative;" target="_blank">托福考试
+                                    <span class="ui-bz-hot-ic"
+                                          style="position: absolute;top: -11px;right: -20px;"></span> </a> <a
+                                        href="portal/browse/exam/aj_yglx_1" style="position:relative;" target="_blank">艺术留学 </a>
+                                    <a href="/portal/browse/exam/IELTS" style="position:relative;"
+                                       target="_blank">雅思考试 </a></dd>
+                            </dl>
+                            <dl class="last">
+                                <dt><b class="t-tag cg"></b> <a href="/life/index" target="_blank">生活休闲<b
+                                        class="li-aw n-ic"></b></a></dt>
+                                <dd><a href="//wenku.baidu.com/portal/browse/exam/new_jiazhuang"
+                                       style="position:relative;" target="_blank">全屋定制 </a> <a
+                                        href="//wenku.baidu.com/portal/browse/exam/hw_fangchan"
+                                        style="position:relative;" target="_blank">海外房产 <span class="ui-bz-hot-ic"
+                                                                                              style="position: absolute;top: -11px;right: -20px;"></span>
+                                </a> <a href="/list/658" style="position:relative;" target="_blank">运动健身 </a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bd">
+        <div class="bd-wrap">
+            <div class="crubms-wrap">
+                <div id="page-curmbs" class="crumbs ui-crumbs mb10">
+                    <ul alog-group="general.curmbs">
+                        <li><a href="/?fr=crumbs" class="logSend" data-logsend='{"send":["general","crumb1"]}'>百度文库</a>
+                        </li>
+                        <li><a href="/pro/index" class="logSend" data-logsend='{"send":["general","crumb2"]}'>专业资料</a>
+                        </li>
+                        <li><a href="/list/63" class="logSend" data-logsend='{"send":["general","crumb3"]}'>IT/计算机</a>
+                        </li>
+                        <li class="current logSend"><a href="/list/161" data-logsend='{"send":["general","crumb4"]}'>计算机软件及应用</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body body-v3">
+                <div class="main">
+                    <script>if (typeof PDC != 'undefined') {
+                        PDC.view_start();
+                    }</script>
+                    <div class="mod doc-main " id="doc-main"><b class="top"><b class="tl"></b><b class="tr"></b></b>
+                        <div class="inner">
+                            <div id="doc-header-test" class="hd doc-header no-doc-desc">
+                                <div class="top-ads-banner "><a href="javascript:;"
+                                                                class="top-ads-banner-goto-cashier log-xsend"
+                                                                data-logxsend="[1,100017]"></a></div>
+                                <h1 class="reader_ab_test with-top-banner"><b class="ic ic-doc"></b><span
+                                        id="doc-tittle-0">传智播客：作业PHP数据库-如何实现站点统计</span></h1>
+                                <p class="doc-value"><span class="author"><span class="ic ic-user"></span><span
+                                        class="user owner-desc-label"><a class="log-xsend" data-logxsend="[1,100595]"
+                                                                         href="/org/view?org=itheima" target="_blank">传智播客</a><span
+                                        class="ic ic-arrow ic-arrow-down"></span></span></span><i>|</i><span
+                                        id="doc-info-0">暂无评价<i>|</i><span class="ic ic-read-num"></span>0<i>|</i><span
+                                        class="ic ic-down-num"></span>0</span><a id="docReport-0" title="举报违规文档"
+                                                                                 class="report" href="###"
+                                                                                 data-has-report="0"
+                                                                                 style="white-space:nowrap;"><i>|</i><b
+                                        class="ic ic-report mr5"></b><span>举报</span></a></p>
+                                <div class="owner-desc-wrap"><p class="doc-desc hide" id="docDescWrap-0"><span
+                                        id="ownerDesc-0" class="doc-desc-all"><span class="owner-img"><a
+                                        class="owner-pic log-xsend" data-logxsend="[1,100595]"
+                                        href="/org/view?org=itheima" target="_blank"><img
+                                        src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/b2de9c82d158ccbfdb0a670e12d8bc3eb1354154.jpg"
+                                        alt=""></a></span><a class="owner-name log-xsend" data-logxsend="[1,100595]"
+                                                             target="_blank" href="/org/view?org=itheima">传智播客<b
+                                        class="ic ic-org"></b></a><span class="owner-value">传智播客是一家覆盖全国17所城市,成立超过1...<i>|</i>总评分<span
+                                        class="owner-score">0.0</span><i>|</i><a class="log-xsend"
+                                                                                 href="/org/view?org=itheima"
+                                                                                 data-logxsend='[1,100025,{"href":"%2Forg%2Fview%3Forg%3Ditheima"}]'
+                                                                                 target="_blank">文档量<span
+                                        class="doc-count">0</span></a><i>|</i>浏览量<span
+                                        class="view-count">0</span></span></span><span class="ic ic-pointer"></span></p>
+                                </div>
+                                <div class="doc-desc-wrap"></div>
+                                <hr/>
+                            </div>
+                            <div class="bd doc-reader" style="position: relative"><span class="ico-wkmember-free-doc"><a
+                                    href="/cashier/browse/dispatch?doc_id=5aefe29427fff705cc1755270722192e44365843&dqStatCode=31_23_86"
+                                    target="_blank"></a></span><span class="high-quality-doc"><a
+                                    href="javascript:;"></a></span><span class="new-ico-wkmember-free-doc"><a
+                                    href="javascript:;"></a></span><span class="pay-doc-discount-ico"><a
+                                    href="javascript:;"></a></span>
+                                <div id="reader-share-pop" class="ui-panel trg-tl" style="display:none; width:271px;"
+                                     tabindex="-1" hideFocus="false">
+                                    <div class="tips-wrape"><span class="trangle"></span>
+                                        <div class="inner">
+                                            <div class="hd"><span class="title">分享至：</span><span class="act"><a
+                                                    href="###" class="ir close">&times;</a></span></div>
+                                            <div class="bd">
+                                                <div class="reader-share-pop-bd">
+                                                    <div id="bdshare"
+                                                         class="bdshare_t bds_tools_32 get-codes-bdshare reader-bdshare bdsharebuttonbox"
+                                                         data-tag="share_1">
+                                                        <div class="share-icons clearfix reader-share-icons"><a
+                                                                class="bds_qzone bdshare-items logSend"
+                                                                data-cmd="qzone"></a><a
+                                                                class="bds_tsina bdshare-items logSend"
+                                                                data-cmd="tsina"></a><a
+                                                                class="bds_tqq bdshare-items logSend"
+                                                                data-cmd="tqq"></a><a
+                                                                class="bds_renren bdshare-items logSend"
+                                                                data-cmd="renren"></a><a
+                                                                class="bds_kaixin001 bdshare-items logSend"
+                                                                data-cmd="kaixin001"></a><a
+                                                                class="bds_douban bdshare-items logSend"
+                                                                data-cmd="douban"></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reader-container" id="reader-container-1">
+                                    <div class="reader-container-inner" id="reader-container-inner-1">
+                                        <div class="mod reader-page complex reader-page-1"><b class="top"><b
+                                                class="tl"></b><b class="tr"></b></b>
+                                            <div class="inner">
+                                                <div class="bd" id="pageNo-1" data-page-no="1" data-mate-width="892.979"
+                                                     data-mate-height="1263.06" style="height:1011.3204229887px;"
+                                                     data-scale="0.70699650056213"></div>
+                                            </div>
+                                            <b class="bottom"><b class="bl"></b><b class="br"></b></b></div>
+                                        <div class="mod reader-page complex reader-page-2"><b class="top"><b
+                                                class="tl"></b><b class="tr"></b></b>
+                                            <div class="inner">
+                                                <div class="bd" id="pageNo-2" data-page-no="2" data-mate-width="892.979"
+                                                     data-mate-height="1263.06" style="height:1011.3204229887px;"
+                                                     data-scale="0.70699650056213"></div>
+                                            </div>
+                                            <b class="bottom"><b class="bl"></b><b class="br"></b></b></div>
+                                        <div class="mod reader-page complex reader-page-3"><b class="top"><b
+                                                class="tl"></b><b class="tr"></b></b>
+                                            <div class="inner">
+                                                <div class="bd" id="pageNo-3" data-page-no="3" data-mate-width="892.979"
+                                                     data-mate-height="1263.06" style="height:1011.3204229887px;"
+                                                     data-scale="0.70699650056213"></div>
+                                            </div>
+                                            <b class="bottom"><b class="bl"></b><b class="br"></b></b></div>
+                                    </div>
+                                    <div id="sampling-area"></div>
+                                    <span id="edit-docPrice" style="display:none;"></span>
+                                    <div class="mod pay-page-mod complex"><b class="top"><b class="tl"></b><b
+                                            class="tr"></b></b>
+                                        <div class="inner">
+                                            <div class="bd" id="bottom-download" style="height:420px;">
+                                                <div class="pay-page-inner reader-end-download reader-end-download-B"
+                                                     style="margin-top:67px; width:420px"><p>阅读已结束，下载文档到电脑</p>
+                                                    <p class="banner-more-info footer-more-info"><b
+                                                            class="iconDown"></b><span>0下载券</span>&nbsp;&nbsp;</p>
+                                                    <div class="btn-download"><a href="###" id="download-btn"
+                                                                                 class="ui-bz-btn-senior reader-download"><b
+                                                            class="ui-bz-btn-p-16 ui-bz-btc">下载</b></a></div>
+                                                    <div class="end-download-bottom-layout clearfix"><span class="tips">想免费下载更多文档？</span><a
+                                                            href="javascript:;"
+                                                            class="ui-bz-btn btn-login-joinvip-rightnow"><b
+                                                            class="ui-bz-btn-p-16 ui-bz-btc">立即加入VIP</b></a>
+                                                        <div class="layout-r">
+                                                            <ul class="list clearfix">
+                                                                <li class="ico-zeng"><a
+                                                                        href="/user/browse/vipprivilege/#id2"
+                                                                        target="_blank">免下载券下载文档</a></li>
+                                                                <li class="ico-zhe"><a
+                                                                        href="/user/browse/vipprivilege/#id3"
+                                                                        target="_blank">10万篇精选文档免费下</a></li>
+                                                                <li class="ico-mian"><a
+                                                                        href="/user/browse/vipprivilege/#id4"
+                                                                        target="_blank">千本精品电子书免费看</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wubai-wrap">
+                                                        <div class="hengxian"></div>
+                                                        <div class="wubai-title"><span class="wubai-icon"></span>
+                                                            <p>定制HR最喜欢的简历</p></div>
+                                                        <a href="/org/browse/jianlidingzhi" target="_blank" title=""
+                                                           class="wubai-rukou log-xsend" data-logxsend="[1, 100844]">我要定制简历</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <b class="bottom"><b class="bl"></b><b class="br"></b></b></div>
+                                    <div id="next_doc_box" class=""><a href="javascript:void(0)" class="log-xsend"
+                                                                       data-logxsend='[1, 100574, {index:2}]'><span
+                                            class="next_text">下一篇</span><i class="iconfont">&#xe629;</i></a></div>
+                                </div>
+                                <div id="shareWrap-1" style="display:none;">
+                                    <div id="shareMore-1" class="reader-share reader-tools-share">
+                                        <dl>
+                                            <dt>把文档贴到Blog、BBS或个人站等：</dt>
+                                            <dd class="reder-code-box"><input id="readerCode-1" onclick="this.select()"
+                                                                              class="reader-code"/><a id="copyCode-1"
+                                                                                                      href="javascript:void(0);"
+                                                                                                      class="cp_btn logSend"
+                                                                                                      data-logsend='{"send":["view","share",{"sns":"web_player"}]}'>复制</a><span
+                                                    id="copyResult-1"></span><a id="viewReader-1" class="pre"
+                                                                                href="javascript:void(0);">预览</a></dd>
+                                            <dd><input id="normalSize-1" name="reader-share" type="radio"
+                                                       checked="true"><label for="normalSize-1">普通尺寸(450*500pix)</label><input
+                                                    id="bigSize-1" class="big" name="reader-share" type="radio"
+                                                    value=""><label for="bigSize-1">较大尺寸(630*500pix)</label></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <form name="downloadForm" action="/user/submit/download" method="post" target="runDown">
+                                    <input name="ct" value="20008" type="hidden"/><input name="doc_id"
+                                                                                         value="5aefe29427fff705cc1755270722192e44365843"
+                                                                                         type="hidden"/><input
+                                        name="retType" value="newResponse" type="hidden"/><input name="sns_type"
+                                                                                                 type="hidden"/><input
+                                        type="hidden" name="storage" value="0"/><input type="hidden" name="useTicket"
+                                                                                       value="0"/><input type="hidden"
+                                                                                                         name="target_uticket_num"
+                                                                                                         value="0"/><input
+                                        type="hidden" name="downloadToken"
+                                        value="9abcd2783ab504d8b9e7ebd2b36f3fbf"/><input type="hidden" name="sz"
+                                                                                         value="284672"><input
+                                        type="hidden" name="v_code" value="0"/><input type="hidden" name="v_input"
+                                                                                      value="0"/><input type="hidden"
+                                                                                                        name="req_vip_free_doc"
+                                                                                                        value="0"/>
+                                </form>
+                                <div id="html-reader-banner-2" class="banner-wrap">
+                                    <div id="wkad21" style="text-alight: center; width: 960px; margin: 0 auto;"></div>
+                                    <div id="html-reader-our-ad-1" class="event-banner banner-block ad-hidden"></div>
+                                </div>
+                                <div id="html-reader-AD-5" class="banner-wrap test">
+                                    <div id="wkad21-2" style="text-align:center;width: 100%;"></div>
+                                    <div id="html-reader-our-ad-1" class="event-banner banner-block ad-hidden"></div>
+                                </div>
+                            </div>
+                            <div class="ft">
+                                <div class="union-ad-bottom" id="wkgg"
+                                     style="display: block; border: 1px solid #dedede;"></div>
+                                <div class="kgrecommend-wrap"></div>
+                                <div class="mod bottom-doc-list pt20 " id="bottom-doc-list-3">
+                                    <div class="hd"><h4>你可能喜欢</h4></div>
+                                    <div class="bd">
+                                        <div class="tagList-wrap">
+                                            <div class="tagList tabControl" alog-group="view.strurecom.tag.total">
+                                                <textarea id="tagList-template-3" style="display:none">                    <%for(var i=0,len=data.length;i<len;i++){%>                        <%var className="";%>                        <%if(i==0){%>                        <%className="current";%>                        <%}%>                        <a
+                                                        href="###" class="<%=className%> logSend"
+                                                        title="<%=util.encodeHTML((data[i]['tag_name']))%>"
+                                                        data-logsend="{'send':['view','tag_link',{'from':'srs','tag_no':'<%=(i+1)%>','ply':'html','doc_srs_strategy':'<%=doc_srs_strategy%>','doc_srs_tag':'<%=doc_srs_tag%>'}]}"
+                                                        alog-action="view.strurecom.tag.<%=i%>"><%=util.cutString(data[i]['tag_name'],10,'...')%></a>                    <%}%>                 </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="tabContent tableList data c-gray9"><textarea
+                                                id="tableList-template-3" style="display:none">         <% for(var i=0,len=data.length;i<len;i++){ %>            <%var status="disabled";%>            <% if(i==0){%>                <%status="current";%>            <%}%>            <%var docList=data[i]["related_doc_infos"];%>             <table
+                                                class="<%=status%>">                <tbody
+                                                alog-group="view.strurecom.doc">                    <%for (var j=0,n=docList.length;j<n;j++){%>                    <tr>                        <td
+                                                class="txtL doc-title"><b
+                                                class="ic ic-<%=docType[docList[j]['doc_type']].toString()%>"></b><a
+                                                href="/view/<%=docList[j]['doc_id']%>.html" target="_blank"
+                                                class="logSend log-xsend fcClick"
+                                                data-logsend="{'send':['view','doc_link',{'from':'srs','tag_no':'<%=(i+1)%>','ply':'html','doc_srs_strategy':'<%=doc_srs_strategy%>','doc_srs_tag':'<%=doc_srs_tag%>'}]}"
+                                                data-logxsend="[1,100029,{'index':'<%=j%>','click_doc_id':'<%=docList[j]['doc_id']%>'}]"
+                                                title="<%=util.encodeHTML(docList[j].title)%>"><%=util.cutString(docList[j].title,25,'...')%></a></td>                        <td
+                                                class="txtL doc-value">                            <%if(docList[j].value>0){%>                                <%=util.star(docList[j].value/2,'s')%>                            <%}else{%>                                暂无评价                            <%}%>                        </td>                        <td
+                                                class="txtL doc-page-num"><%=docList[j]['page_num']%>页</td>                        <td
+                                                class="txtL doc-price"><%=util.priceText(docList[j])%></td>                    </tr>                    <%}%>                </tbody>                <tfoot>                  <td
+                                                class="list-more" colspan="4"><a
+                                                href="http://www.baidu.com/s?word=<%=data[i]['tag_name']%>&tn=SE_huins0007_nhui0007"
+                                                target="_blank" class="logSend log-xsend" data-logxsend='[1, 100180]'
+                                                data-logsend="{'send':['view','more_link',{'from':'srs','tag_no':'<%=(i+1)%>','ply':'html','doc_srs_strategy':'<%=doc_srs_strategy%>','doc_srs_tag':'<%=doc_srs_tag%>'}]}">更多与“<span><%=data[i]['tag_name']%></span>”相关的内容&gt;&gt</a></td>                </tfoot>             </table>        <%}%>            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="doc-comment" class="doc-comment"><h4>您的评论<span class="star-act"><b
+                                        class="ct-star value-star ic-star-off"></b><b
+                                        class="ct-star value-star ic-star-off"></b><b
+                                        class="ct-star value-star ic-star-off"></b><b
+                                        class="ct-star value-star ic-star-off"></b><b
+                                        class="ct-star value-star ic-star-off"></b></span><span
+                                        class="f-star"></span><span class="tip">*感谢支持，给文档评个星吧！</span></h4>
+                                    <div class="post-comment-wrap clearfix">
+                                        <div class="add-ct-tip">
+                                            <div class="add-ct-wrap"><p style="padding:10px;"><textarea
+                                                    class="post-comment-ipt" placeholder="写点评论支持下文档贡献者~"></textarea></p>
+                                                <p class="length-tip">240</p></div>
+                                            <a class="add-new-btn post-comment-btn" href="javascript:void(0);">发布评论</a>
+                                            <div id='captcha-wrap' style="display:none;"><input id='v_input'
+                                                                                                placeholder="输入验证码"
+                                                                                                name='v_input'/><img
+                                                    id='captcha'/><a class='change-captcha' href='javascript:void(0);'>换一换</a><input
+                                                    type='hidden' id='v_code' name='v_code'/></div>
+                                            <p class="tip"></p></div>
+                                    </div>
+                                    <div class="comment-wrap"><h4>用户评价<span class="ct-num"></span></h4>
+                                        <p class="loading">评论加载中...</p>
+                                        <ul class="comment-list hide" id="comment-list"></ul>
+                                    </div>
+                                </div>
+                                <div id="pager"></div>
+                                <script type="text/template" id="comment-item-tpl">
+                                    <div class="ct-item-wrap">
+                                        <div class="clearfix ct-con-wrap">
+                                            <div class="ct-extra-into"><p><%= create_time %></p>
+                                                <p> <% if ( "" == uname ) { %> <a href="javascript:void(0);"
+                                                                                  class="delete-btn">删除</a> <% } %> <a
+                                                        href="javascript:void(0);" class="reply-btn">回复 (<span
+                                                        class="ry-num">0</span>)</a></p></div>
+                                            <div class="ct-con">
+                                                <div class="avatar-wrap">
+                                                    <div><a href="<%= url %>" target="_blank"><img class="avatar"
+                                                                                                   src="<%= avatar %>"/></a>
+                                                    </div>
+                                                </div>
+                                                <div class="main-con"><p><span class="ct-star">							<% var onNum = Math.ceil( star ); %>							<% var offNum = 5 - onNum; %>							<% for ( var i = 0; i < onNum; i++ ) { %>								<b
+                                                        class="ic-star-score star-score-on"></b>							<% } %>							<% for ( var i = 0; i < offNum; i++ ) { %>								<b
+                                                        class="ic-star-score star-score-off"></b>							<% } %>						</span>
+                                                    <a class="uname" href="<%= url %>" target="_blank"><%= tname %></a>
+                                                    <% if ( oInfo.org_name ) { %> <span
+                                                            class="bg-comment ic-over"></span> <% } else if ( title ) {
+                                                    %> <span class="bg-comment ic-ver"></span> <span class="title"><%= title %></span>
+                                                    <% } %> </p>
+                                                    <div class="ct-atc"><p><%- content %></p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reply-wrap">
+                                            <div class="bg-comment ic-arrow"></div>
+                                            <div class="post-reply clearfix"><a class="add-new-btn post-reply-btn"
+                                                                                href="javascript:void(0);">回复</a> <input
+                                                    type="text" class="post-reply-ipt"/></div>
+                                            <div class="info-tip clearfix"><p class="error-tip"></p>
+                                                <p class="reply-num">共<%= reply_count %>条回复</p></div>
+                                            <ul class="reply-list"></ul>
+                                        </div>
+                                    </div></script>
+                                <script type="text/template"
+                                        id="comment-list-tpl">    <% if ( commentList.length > 0 ) { %>        <% _.each( commentList, function( item ) { %>
+                                <li class="ct-item" data-reply-id="<%= item.reply_id %>" id="item-<%= item.reply_id %>">
+                                    <div class="ct-item-wrap">
+                                        <div class="clearfix ct-con-wrap">
+                                            <div class="ct-extra-into"><p><%= item.create_time %></p>
+                                                <p> <% if ( "" == item.uname || item.is_uid_admin ) { %> <a
+                                                        href="javascript:void(0);" class="delete-btn">删除</a> <% } %> <a
+                                                        href="javascript:void(0);" class="reply-btn">回复 (<span
+                                                        class="ry-num"><%= item.reply_count %></span>)</a></p></div>
+                                            <div class="ct-con">
+                                                <div class="avatar-wrap">
+                                                    <div><a href="<%= item.url %>" target="_blank"><img class="avatar"
+                                                                                                        src="<%= item.avatar %>"/></a>
+                                                    </div>
+                                                </div>
+                                                <div class="main-con"><p><span class="ct-star">										<% var onNum = Math.ceil( item.star ); %>										<% var offNum = 5 - onNum; %>										<% for ( var i = 0; i < onNum; i++ ) { %>											<b
+                                                        class="ic-star-score star-score-on"></b>										<% } %>										<% for ( var i = 0; i < offNum; i++ ) { %>											<b
+                                                        class="ic-star-score star-score-off"></b>										<% } %>									</span>
+                                                    <a class="uname" href="<%= item.url %>" target="_blank"><%=
+                                                        item.tname %></a> <% if ( item.oInfo.org_name ) { %> <span
+                                                            class="bg-comment ic-over"></span> <% } else if ( item.title
+                                                    ) { %> <span class="bg-comment ic-ver"></span> <span class="title"><%= item.title %></span>
+                                                    <% } %> </p>
+                                                    <div class="ct-atc"><p><%- item.content %></p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reply-wrap">
+                                            <div class="bg-comment ic-arrow"></div>
+                                            <div class="post-reply clearfix"><a class="add-new-btn post-reply-btn"
+                                                                                href="javascript:void(0);">回复</a> <input
+                                                    type="text" class="post-reply-ipt"/></div>
+                                            <div class="info-tip clearfix"><p class="error-tip"></p>
+                                                <p class="reply-num">共<%= item.reply_count %>条回复</p></div>
+                                            <ul class="reply-list"></ul>
+                                        </div>
+                                    </div>
+                                </li>        <% } ); %>    <% } else { %>
+                                <li class="no-comment">暂无评论</li>    <% } %></script>
+                                <script type="text/template" id="reply-item-tpl">
+                                    <div class="ry-item-wrap"><p class="date"> <%= create_time %><br/> <% if ( "" ==
+                                        uname ) { %> <a href="javascript:void(0);" class="delete-btn delete-reply-btn">删除</a>
+                                        <% } %> </p>
+                                        <div class="reply-info"><p><a class="uname" href="<%= url %>" target="_blank"><%=
+                                            tname %></a> <% if ( oInfo.org_name ) { %> <span
+                                                class="bg-comment ic-over"></span> <% } else if ( title ) { %> <span
+                                                class="bg-comment ic-ver"></span> <span
+                                                class="title"><%= title %></span> <% } %> </p>
+                                            <div class="ct-atc"><p><%- content %></p></div>
+                                        </div>
+                                    </div></script>
+                                <script type="text/template"
+                                        id="reply-list-tpl">    <% _.each( replyList, function( item, key ) { %>
+                                <li class="ry-item clearfix <% if ( key == replyList.length - 1 ) { %> last <%}%>"
+                                    data-reply-id="<%= item.reply_id %>" id="item-<%= item.reply_id %>">
+                                    <div class="ry-item-wrap"><p class="date"> <%= item.create_time %><br/> <% if ( ""
+                                        == item.uname ) { %> <a href="javascript:void(0);"
+                                                                class="delete-btn delete-reply-btn">删除</a> <% } %> </p>
+                                        <div class="reply-info"><p><a class="uname" href="<%= item.url %>"
+                                                                      target="_blank"><%= item.tname %></a> <% if (
+                                            item.oInfo.org_name ) { %> <span class="bg-comment ic-over"></span> <% }
+                                            else if ( item.title ) { %> <span class="bg-comment ic-ver"></span> <span
+                                                    class="title"><%= item.title %></span> <% } %> </p>
+                                            <div class="ct-atc"><p><%- item.content %></p></div>
+                                        </div>
+                                    </div>
+                                </li>    <% } ); %></script>
+                                <div id="ggbtm"></div>
+                            </div>
+                        </div>
+                        <b class="bottom"><b class="bl"></b><b class="br"></b></b></div>
+                    <div class="ys-ads-mask"></div>
+                </div>
+                <div class="aside aside-v3">
+                    <div class="aside-wrap ">
+                        <div class="doc-upload  no-doc-desc" id="doc-upload" data-login=""><a id="uploadDoc-3"
+                                                                                              href="javascript:void(0);"
+                                                                                              class="ic view-sps btn-upload btn-upload-new log-xsend"
+                                                                                              data-logxsend="[1,100602]"
+                                                                                              alog-action="view.uploadbtn"><span
+                                class="opennew">上传文档</span></a></div>
+                        <div class="doc-aside-border" id="doc-aside-border"><a id="wkad18"
+                                                                               class="mt10 ad-area log-xsend"
+                                                                               data-logxsend="[1,100619]"
+                                                                               style="text-align:center;display:block"></a>
+                            <div class="goldclue-wrap"></div>
+                            <div class="mod page-doc-list related-doc" id="relative-doc-item">
+                                <script type="text/template" id="relate-item-tpl">        <% var act_id = 0 ; %>
+                                <div class="hd clearfix"><h4 style="font-size:14px; color:#333">机构其他文档推荐</h4><span
+                                        class="more-doc"><a id="more" href="/org/view?org=itheima" target="_blank"
+                                                            class="log-xsend" data-logxsend='[1,100283]'
+                                                            data="<%= act_id++ %>">全部>></a></span></div>
+                                <div class="bd">
+                                    <ul id="pageList" class="tabContent" alog-group="view.relatedoc.doc">
+                                        <li class="current"> <% _.each( relateList, function( item,key ) { %>
+                                            <div class="item"><p class="doc-title"><b class="ic ic-<%=item.type %>"></b>
+                                                <a href="/view/<%= item.doc_id %>.html" data="<%= act_id++ %>"
+                                                   class="rec-items							reco-docs-items log-xsend"
+                                                   title="<%= item.title %>" target="_blank" data-logxsend='[1,100371]'><%=
+                                                    item.title%></a></p>
+                                                <div class="gd-g tail-info">
+                                                    <div class="gd-g-u gd-u-11-24 gd-value">
+                                                        <span><%= item.view_count%></span>人阅读
+                                                    </div>
+                                                    <div class="gd-g-u gd-u-1-4 " id="page"><%= item.page %>页</div>
+                                                    <div class="gd-g-u gd-u-7-24"> <% if (item.sale_price != undefined)
+                                                        {%> ￥<%= item.sale_price%> <% }else if (item.docTicket > 0) {%>
+                                                        <%= item.docTicket %>下载券 <% }else{ %> 免费 <% } %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% });%>
+                                        </li>
+                                    </ul>
+                                </div>    </script>
+                            </div>
+                            <div id="fixed-box">
+                                <div id="view-like-recom"></div>
+                                <div id="guess-like-doc"></div>
+                                <div class="zhixin-right"></div>
+                                <div class="fengchao-right"></div>
+                                <div class="comment mb20 mt20"></div>
+                            </div>
+                            <div id="viewSideDown" class="viewSideDown" style="display: none">
+                                <div class="viewSideDown-layout"><a class="btn-viewSideDown-close"
+                                                                    href="javascript:;"></a><a
+                                        href="http://wenku.baidu.com/miti" class="log-xsend" data-logxsend="[1, 100447]"
+                                        target="_blank"><img src=""/></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ft">
+        <div class="footer"><p><span class="cr">&copy;2017&nbsp;Baidu</span>&nbsp;<a href="http://www.baidu.com/duty/"
+                                                                                     class="Bidu" target="_blank">使用百度前必读</a>&nbsp;|&nbsp;<a
+                href="http://wenku.baidu.com/portal/browse/help#help/20" class="Xieyi" target="_blank">文库协议</a>&nbsp;|&nbsp;<a
+                href="https://jiaoyu.baidu.com/topic/bsplatform/brand_promotion" class="Xieyi" target="_blank">广告服务</a>&nbsp;|&nbsp;<a
+                href="https://jiaoyu.baidu.com/topic/bsplatform/institutional_database" class="Xieyi" target="_blank">企业文库</a>&nbsp;|&nbsp;<a
+                href="/portal/browse/websitemap" class="Xieyi" target="_blank">网站地图</a></p></div>
+    </div>
+</div>
+<script type="text/javascript">        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd8bfb560f8d03bbefc9bdecafc4a4bf6' type='text/javascript'%3E%3C/script%3E"));    </script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=39124"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<div class="ad-taishan-bar"><a href="###" target="_blank" class="log-xsend" data-logxsend="[1, 100968, {index: 1}]"></a>
+    <div class="ad-bar-close"></div>
+</div>
+<div class="ad-taishan"><a href="###" target="_blank" class="log-xsend" data-logxsend="[1, 100968, {index: 2}]"></a>
+</div>
+<script type="text/javascript" src="//passport.baidu.com/passApi/js/uni_armorwidget_wrapper.js"></script>
+<script type="text/javascript" src="//passport.baidu.com/passApi/js/uni_login_wrapper.js"></script>
+<script type="text/javascript">var pageId = 'wenku-view';</script>
+<script>alog && alog('speed.set', 'drt', +new Date);</script>
+<script>    if (window.viewTime && window.viewTime.t) {        // body 渲染完成时间        window.viewTime.bt = new Date().getTime();    }    void function(a,b,c,d,e,f){function g(b){a.attachEvent?a.attachEvent("onload",b,!1):a.addEventListener&&a.addEventListener("load",b)}function h(a,c,d){d=d||15;var e=new Date;e.setTime((new Date).getTime()+1e3*d),b.cookie=a+"="+escape(c)+";path=/;expires="+e.toGMTString()}function i(a){var c=b.cookie.match(new RegExp("(^| )"+a+"=([^;]*)(;|$)"));return null!=c?unescape(c[2]):null}function j(){var a=i("PMS_JT");if(a){h("PMS_JT","",-1);try{a=a.match(/{["']s["']:(\d+),["']r["']:["']([\s\S]+)["']}/),a=a&&a[1]&&a[2]?{s:parseInt(a[1]),r:a[2]}:{}}catch(c){a={}}a.r&&b.referrer.replace(/#.*/,"")!=a.r||alog("speed.set","wt",a.s)}}if(a.alogObjectConfig){var k=a.alogObjectConfig.sample,l=a.alogObjectConfig.rand;d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d,k&&l&&l>k||(g(function(){alog("speed.set","lt",+new Date),e=b.createElement(c),e.async=!0,e.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),f=b.getElementsByTagName(c)[0],f.parentNode.insertBefore(e,f)}),j())}}(window,document,"script","/hunter/alog/dp.min.js");</script>
+</body>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkcommon/modjs/mod_21fbee4.js"></script>
+<script type="text/javascript">require.resourceMap({
+    "res": {
+        "wkview:widget\/doc_header_new\/doc_header_qrcode.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkview\/widget\/doc_header_new\/doc_header_qrcode_ea0cfd2.js",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/ui\/js_core\/qrcode\/qrcode.js", "wkcommon:widget\/ui\/js_core\/log\/log.js"]
+        },
+        "wkview:widget\/userEvaluation\/userEvaluation.js": {
+            "pkg": "wkview:p0",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/log\/log.js"]
+        },
+        "wkview:widget\/ui\/html_view\/widget.js": {
+            "pkg": "wkview:p3",
+            "deps": ["wkcommon:widget\/ui\/lib\/object\/object.js", "wkcommon:widget\/ui\/lib\/lang\/lang.js", "wkcommon:widget\/ui\/lib\/array\/array.js", "wkcommon:widget\/ui\/js_core\/util\/util.js"]
+        },
+        "wkcommon:widget\/ui\/lib\/store\/store.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkcommon\/widget\/ui\/lib\/store\/store_32a0d1e.js",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js"]
+        },
+        "wkapi:widget\/js\/dep\/lang\/lang.js": {"pkg": "wkapi:p1"},
+        "wkview:widget\/next_doc\/next_doc.js": {
+            "pkg": "wkview:p1",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/ui\/js_core\/log\/log.js"]
+        },
+        "wkcommon:widget\/ui\/lib\/inCharset\/inCharset.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkcommon\/widget\/ui\/lib\/inCharset\/inCharset_0ee79e0.js",
+            "deps": ["wkcommon:widget\/ui\/lib\/browser\/browser.js"]
+        },
+        "wkcommon:widget\/dp_performance\/dp_First\/dp_First.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/js_core\/log\/log.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/config\/config.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/js_core\/mvp\/template\/template.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/model\/doc\/model.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/js_core\/mvp\/model\/model.js", "wkcommon:widget\/ui\/js_core\/mvp\/template\/template.js", "wkcommon:widget\/ui\/js_core\/log\/log.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/model\/model.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/reader\/model\/doc\/model.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/view\/doc\/render.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/view\/doc\/view.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/js_core\/mvp\/view\/view.js", "wkcommon:widget\/ui\/reader\/view\/doc\/render.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/view\/view.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/reader\/view\/doc\/view.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/strategy\/doc\/util.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/strategy\/doc\/strategy.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/js_core\/preload\/preload.js", "wkcommon:widget\/ui\/reader\/strategy\/doc\/util.js", "wkcommon:widget\/ui\/js_core\/log\/log.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/dp_performance\/dp_First\/dp_First.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/strategy\/strategy.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/reader\/strategy\/doc\/strategy.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/presenter\/presenter.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/mvp\/presenter\/presenter.js", "wkcommon:widget\/ui\/js_core\/mvp\/event\/event.js", "wkcommon:widget\/ui\/reader\/config\/config.js", "wkcommon:widget\/ui\/reader\/model\/model.js", "wkcommon:widget\/ui\/reader\/view\/view.js", "wkcommon:widget\/ui\/reader\/strategy\/strategy.js", "wkcommon:widget\/ui\/reader_plugin\/reader_plugin.js"]
+        },
+        "wkcommon:widget\/ui\/reader\/reader.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/reader\/presenter\/presenter.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/ZeroClipboard\/ZeroClipboard.js": {"pkg": "wkcommon:p10"},
+        "wkcommon:widget\/ui\/reader_plugin\/qrcode.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/js_core\/qrcode\/qrcode.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/translate.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/baike.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/mvp\/template\/template.js", "wkcommon:widget\/ui\/js_core\/util\/util.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/copy.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/reader_plugin\/ZeroClipboard\/ZeroClipboard.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/reader_plugin\/qrcode.js", "wkcommon:widget\/ui\/reader_plugin\/translate.js", "wkcommon:widget\/ui\/reader_plugin\/baike.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/log.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/lib\/fis\/data\/data.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/keyword\/match_card\/match_card.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/lib\/browser\/browser.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/keyword\/search.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/ui\/lib\/array\/array.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/lib\/browser\/browser.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/match_card\/match_card.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/keyword\/match_card\/getKeycard.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/reader_plugin\/keyword\/search.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/lib\/sio\/sio.js", "wkcommon:widget\/ui\/lib\/object\/object.js", "wkcommon:widget\/ui\/js_core\/log\/log.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/lib\/inCharset\/inCharset.js", "wkcommon:widget\/ui\/lib\/browser\/browser.js", "wkcommon:widget\/ui\/js_core\/toolkit\/toolkit.js", "wkcommon:widget\/lib\/doT\/doT.min.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/keyword\/main.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/reader_plugin\/keyword\/search.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/lib\/sio\/sio.js", "wkcommon:widget\/ui\/lib\/object\/object.js", "wkcommon:widget\/ui\/js_core\/log\/log.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/lib\/inCharset\/inCharset.js", "wkcommon:widget\/ui\/lib\/browser\/browser.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/match_card\/getKeycard.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/search.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/ui\/lib\/array\/array.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/lib\/browser\/browser.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/video_card\/videocard.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/js_core\/log\/log.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/lib\/inCharset\/inCharset.js", "wkcommon:widget\/ui\/lib\/browser\/browser.js", "wkcommon:widget\/ui\/js_core\/toolkit\/toolkit.js", "wkcommon:widget\/lib\/doT\/doT.min.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/main.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/ui\/reader_plugin\/videokeyword\/search.js", "wkcommon:widget\/ui\/js_core\/util\/util.js", "wkcommon:widget\/ui\/lib\/sio\/sio.js", "wkcommon:widget\/ui\/lib\/object\/object.js", "wkcommon:widget\/ui\/js_core\/log\/log.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/lib\/inCharset\/inCharset.js", "wkcommon:widget\/ui\/lib\/browser\/browser.js", "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/video_card\/videocard.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/reader_plugin.js": {
+            "pkg": "wkcommon:p10",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/reader_plugin\/copy.js", "wkcommon:widget\/ui\/reader_plugin\/log.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/main.js", "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/main.js"]
+        },
+        "wkcommon:widget\/ui\/reader_plugin\/keyword\/idList.js": {"pkg": "wkcommon:p10"},
+        "wkcommon:widget\/ui\/reader_plugin\/keyword\/wordList.js": {"pkg": "wkcommon:p10"},
+        "wkcommon:widget\/ui\/reader_plugin\/search.js": {"pkg": "wkcommon:p10"},
+        "wkview:widget\/view_recom_thirdad\/dialog\/dialog.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkview\/widget\/view_recom_thirdad\/dialog\/dialog_4691508.js",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/doT\/doT.min.js"]
+        },
+        "wkview:widget\/view_recom_thirdad\/goldclue-content\/goldclue-content.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkview\/widget\/view_recom_thirdad\/goldclue-content\/goldclue-content_3ab8fcb.js",
+            "deps": ["wkview:widget\/view_recom_thirdad\/dialog\/dialog.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/doT\/doT.min.js", "wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/lib\/fis\/data\/data.js", "wkcommon:widget\/ui\/js_core\/log\/log.js"]
+        },
+        "wkview:widget\/view_recom_thirdad\/endPageGoldClueAd\/endPageGoldClueAd.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkview\/widget\/view_recom_thirdad\/endPageGoldClueAd\/endPageGoldClueAd_e835d54.js",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/lib\/doT\/doT.min.js", "wkview:widget\/view_recom_thirdad\/goldclue-content\/goldclue-content.js", "wkcommon:widget\/ui\/js_core\/log\/log.js"]
+        },
+        "wkcommon:widget\/ui\/payCheck\/payCheck.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkcommon\/widget\/ui\/payCheck\/payCheck_61061dc.js",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js", "wkcommon:widget\/ui\/js_core\/_dialog\/_dialog.js", "wkcommon:widget\/ui\/js_core\/login\/login.js"]
+        },
+        "wkview:widget\/ad\/viewSideDownAd\/viewSideDown.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkview\/widget\/ad\/viewSideDownAd\/viewSideDown_9f34452.js",
+            "deps": ["wkcommon:widget\/lib\/tangram\/base\/base.js", "wkview:widget\/html_view\/html_reader\/js\/autofixed.js", "wkcommon:widget\/ui\/lib\/jquery\/jquery.js"]
+        },
+        "wkcommon:widget\/ui\/lib\/async_widget\/async_widget.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkcommon\/widget\/ui\/lib\/async_widget\/async_widget_e8d6637.js",
+            "deps": ["wkcommon:widget\/ui\/lib\/jquery\/jquery.js"]
+        },
+        "wkcommon:widget\/ui\/lib\/lazyload\/lazyload.js": {"url": "\/\/wkstatic.bdimg.com\/static\/wkcommon\/widget\/ui\/lib\/lazyload\/lazyload_ff4c82f.js"},
+        "wkcommon:widget\/ui\/lib\/BigPipe\/BigPipe.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkcommon\/widget\/ui\/lib\/BigPipe\/BigPipe_1626517.js",
+            "deps": ["wkcommon:widget\/ui\/lib\/lazyload\/lazyload.js"]
+        },
+        "wkview:widget\/ui\/detectImgBlock\/conf.js": {"url": "\/\/wkstatic.bdimg.com\/static\/wkview\/widget\/ui\/detectImgBlock\/conf_bd82ddc.js"},
+        "wkview:widget\/ui\/detectImgBlock\/hijack.js": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkview\/widget\/ui\/detectImgBlock\/hijack_5dabab1.js",
+            "deps": ["wkview:widget\/ui\/detectImgBlock\/conf.js", "wkcommon:widget\/ui\/js_core\/log\/log.js"]
+        }
+    },
+    "pkg": {
+        "wkcommon:p10": {
+            "url": "\/\/wkstatic.bdimg.com\/static\/wkcommon\/pkg\/pkg_wkcommon_htmlReader_7a77f53.js",
+            "has": ["wkcommon:widget\/dp_performance\/dp_First\/dp_First.js", "wkcommon:widget\/ui\/reader\/config\/config.js", "wkcommon:widget\/ui\/reader\/model\/doc\/model.js", "wkcommon:widget\/ui\/reader\/model\/model.js", "wkcommon:widget\/ui\/reader\/view\/doc\/render.js", "wkcommon:widget\/ui\/reader\/view\/doc\/view.js", "wkcommon:widget\/ui\/reader\/view\/view.js", "wkcommon:widget\/ui\/reader\/strategy\/doc\/util.js", "wkcommon:widget\/ui\/reader\/strategy\/doc\/strategy.js", "wkcommon:widget\/ui\/reader\/strategy\/strategy.js", "wkcommon:widget\/ui\/reader\/presenter\/presenter.js", "wkcommon:widget\/ui\/reader\/reader.js", "wkcommon:widget\/ui\/reader_plugin\/ZeroClipboard\/ZeroClipboard.js", "wkcommon:widget\/ui\/reader_plugin\/qrcode.js", "wkcommon:widget\/ui\/reader_plugin\/translate.js", "wkcommon:widget\/ui\/reader_plugin\/baike.js", "wkcommon:widget\/ui\/reader_plugin\/copy.js", "wkcommon:widget\/ui\/reader_plugin\/log.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/match_card\/match_card.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/search.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/match_card\/getKeycard.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/main.js", "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/search.js", "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/video_card\/videocard.js", "wkcommon:widget\/ui\/reader_plugin\/videokeyword\/main.js", "wkcommon:widget\/ui\/reader_plugin\/reader_plugin.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/idList.js", "wkcommon:widget\/ui\/reader_plugin\/keyword\/wordList.js", "wkcommon:widget\/ui\/reader_plugin\/search.js"]
+        }
+    }
+});</script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkcommon/pkg/pkg_wkcommon_lib_e259f23.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wktrade/widget/ui/mvp/model/model_807690b.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wktrade/pkg/cashiercommon_c23806f.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkcommon/widget/ui/flashFactory/flashFactory_7ca31b3.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkcommon/widget/ui/lib/jquery_xdomainrequest/xdomainrequest_adc6083.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkcommon/pkg/pkg_wkcommon_base_3df7132.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/doc_header_new/doc_header_new_b4f05c6.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkview/pkg/htmlview_686788a.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkview/pkg/viewcommon_9736f61.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/ui/detectImgBlock/detectImgBlock_dbeb262.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/ui/tools/hao123common/hao123common_c703d7b.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkview/pkg/newviewppt_2ff334d.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkapi/pkg/pkg_wkenterprise_base_57bafd2.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/ui/html_view/slider/control_e0c5b71.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/ui/html_view/slider/slider_43b7f81.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/ui/html_view/slider/pageNum_d84dd3f.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/ui/reader/view/doc/render_2051b36.js"></script>
+<script type="text/javascript" src="//wkstatic.bdimg.com/static/wkview/widget/ui/pay/mediator_bcff269.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/view/statistic_18e0b3e.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/component/tab/tab_9256e3b.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/component/kgtree/kgtree_d8ffe3a.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/component/doclist/docitem/docitem_91b51d9.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/component/doclist/doclist_2f96239.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/view/view_9e2929b.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/util/config_cc98082.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/util/getContent_9be6b9c.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/store/getContentData_75f3efc.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/store/getCardDocsByEntid_ba7631a.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/store/getDoclistByPn_9e77adc.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/kg_recommend/kg_recommend_777f865.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/raw_income/raw_income_036589e.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/raw_income/native_income/native_income_d0bf1cb.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/doc_upload_new/doc_upload_new_a8bbd41.js"></script>
+<script type="text/javascript"
+        src="//wkstatic.bdimg.com/static/wkview/widget/jigou_tuijian/jigou_tuijian_74a686c.js"></script>
+<script type="text/javascript">!function () {			//service worker相关统计			require.async(['wkcommon:widget/ui/js_core/log/log.js'],function(Log){				try {					function testMime (key, value) {						var mimeTypes = navigator.mimeTypes;						for (var i in mimeTypes) {						if (mimeTypes[i][key] === value) {							return true;						}						}						return false;					}					if (navigator.userAgent.indexOf('Chrome') !== -1) {						Log.xsend(1, 101033);						if (navigator.mimeTypes) {							if (testMime('type', 'application/vnd.chromium.remoting-viewer')) {								Log.xsend(1, 101032);							}						}					}					if ('serviceWorker' in navigator && 'PushManager' in window) {						Log.xsend(1, 101034);					}				} catch (e) {				}			});		}();!function(){    // Js执行时间参考1    if (window.viewTime) {    window.viewTime.rs = new Date().getTime();    }        //预加载播放器        require.async(['wkcommon:widget/ui/reader/reader.js']);        require.async(['wkcommon:widget/lib/fis/data/data.js', 'wkview:widget/ui/nsTypeMap/nsTypeMap.js'],function(Data, n){            if(window.name.search('readerSetting')!==-1){                document.body.style.visibility = "hidden";                var WkInfo = Data.get("WkInfo") || {};                    WkInfo.readerFromSetting = true;                    Data.set("WkInfo",WkInfo);            }        });    }();!function(){require.async(['wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/ui/lib/jquery/jquery.js', 'wkcommon:widget/user_bar/user_bar.js'], function(Data, $){    Data.set('isPgcPop', '');    $( '#reg' ).attr( 'href', 'https://passport.baidu.com/v2/?reg&tpl=do&u=' + encodeURIComponent( location.href ) );});}();!function(){    window.escapeSymbol=function(e){return String(e).replace(/[#%&+=\/\\\ \u3000\f\r\n\t]/g,function(e){return"%"+(256+e.charCodeAt()).toString(16).substring(1).toUpperCase()})},window.setHeadUrl=function(e){if(document.getElementById("kw").value){var t=new RegExp("[?]");if(!t.test(e.href)){var r=e.href;e.href=e.getAttribute("data-href"),e.setAttribute("data-href",r)}e.href=e.href.replace("?newmap=1&ie=utf-8&s=s%26wd%3D","?newmap=1&ie=utf-8&s=s&wd="),e.href=e.href.replace(new RegExp("("+e.getAttribute("wdfield")+"=)[^&]*"),"$1"+encodeURIComponent(document.getElementById("kw").value)).replace("?newmap=1&ie=utf-8&s=s&wd=","?newmap=1&ie=utf-8&s=s%26wd%3D"),e.href=e.href.replace(new RegExp("("+e.getAttribute("wdfield")+"=)[^&]*"),"$1"+window.escapeSymbol(document.getElementById("kw").value))}else{var t=new RegExp("[?]");if(t.test(e.href)){var r=e.href;e.href=e.getAttribute("data-href"),e.setAttribute("data-href",r)}}};;    }();!function(){    require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/header/search_box/search_box.js'], function(T, Data){    var hotword = T.json.parse('[{\x22content\x22:\x22ppt\\u7d20\\u6750\x22,\x22isnew\x22:\x220\x22},{\x22content\x22:\x22\\u7b80\\u5386\\u6a21\\u677f\x22,\x22isnew\x22:\x220\x22},{\x22content\x22:\x22\\u65b0\\u89c6\\u91ce\\u82f1\\u8bed\\u89c6\\u542c\\u8bf4\x22,\x22isnew\x22:\x221\x22},{\x22content\x22:\x22\\u793e\\u4f1a\\u5b9e\\u8df5\\u62a5\\u544a\x22,\x22isnew\x22:\x220\x22},{\x22content\x22:\x22\\u9ad8\\u4e2d\\u6570\\u5b66\\u77e5\\u8bc6\\u70b9\x22,\x22isnew\x22:\x221\x22},{\x22content\x22:\x22\\u6717\\u8bfb\\u8005\x22,\x22isnew\x22:\x220\x22},{\x22content\x22:\x22\\u8ba1\\u7b97\\u673a\\u4e8c\\u7ea7office\\u9898\\u5e93\x22,\x22isnew\x22:\x221\x22},{\x22content\x22:\x22\\u5165\\u515a\\u7533\\u8bf7\\u4e66\x22,\x22isnew\x22:\x220\x22}]');    Data.set('hotword', hotword);    });}();!function(){    require.async(["wkcommon:widget/lib/tangram/base/base.js", "wkcommon:widget/ui/js_core/login/login.js", "wkcommon:widget/ui/lib/jquery/jquery.js", "wkcommon:widget/ui/js_core/log/log.js"],function(e,n,i,o){e.dom.ready(function(){var t=(e.event,e.g);o.xsend(1,100753);var a=document.location.pathname,r={"nav-index":/^\/$/i,"nav-edu":/^\/edu/i,"nav-org":/^\/org\/index/i},u=(n.login,100);for(var c in r)if(r.hasOwnProperty(c)){var s=r[c];if(s.test&&s.test(a)){var d=t(c);d&&e.addClass(d,"current")}}!function(){var n=document.location.pathname,i=(e.dom.g("zone-menu"),e.dom.q("ui-sub-nav","hd","div")[0]),o=[/^\/edu\/index$/i,/^\/ppt\/index$/i,/^\/life\/index$/i,/^\/pro\/index$/i,/^\/form\/index$/i,/^\/topic$/i],t=function(){for(var e={isZonePage:!1,zoneType:""},i=0,t=o.length;t>i;i++){var a=o[i];a.test(n)&&(e.isZonePage=!0,e.zoneType=n)}return e}();if(t.isZonePage&&i)for(var a=i.getElementsByTagName("a"),r=0,u=a.length;u>r;r++){var c=a[r],s=c.getAttribute("href");(t.zoneType===s||document.location.href===s)&&e.dom.addClass(c.parentNode,"current")}}(),function(){function e(){a.hide(),t.removeClass("current")}function n(){a.show(),t.addClass("current")}var o="";if(!o){var t=i("#zone-menu"),a=i("#wk-all-cate"),r=null;t.mouseenter(function(){r&&clearTimeout(r),r=setTimeout(function(){n()},u)}).mouseleave(function(n){r&&clearTimeout(r),n.relatedTarget!=a[0]&&e()}),a.mouseenter(function(){n()}).mouseleave(function(){e()})}}(),function(n){var i=null;n("ul.main-nav li").on("mouseenter",function(){var e=n(this),o=e.find(".drop-sub-nav");o.length&&o.find(">a").length&&(i=setTimeout(function(){o.show(),e.addClass("current")},u))}),e.cookie.get("__join_jiaoyu_vip")?n(".havenew-ic").hide():(n(".havenew-ic").show(),n(".jiaoyu-vip").on("click",function(){n(".havenew-ic").hide(),e.cookie.set("__join_jiaoyu_vip",1,{path:"/"})})),n("ul.main-nav li").on("mouseleave",function(){i&&clearTimeout(i),n(this).find(".drop-sub-nav").hide(),n(this).removeClass("current")})}(i)})});;}();!function(){	require.async(['wkcommon:widget/ui/lib/jquery/jquery.js'], function( $ ){		$(function(){			var oid = "608556", url = '/org/interface/getorgcount?oid='+oid;			try{				$.getJSON( url, function( data ){					if(data.errno !== 0){						return;					}					var data = data.data;					var doc_count = data.doc_count;					var view_count = data.view_count;					var score = (data.score*1.0).toFixed(1);					$('.doc-count').html(doc_count);					$('.view-count').html(view_count);					$('.owner-score').html(score);				});			}catch(e){}		});	});}();!function(){        require.async(['wkcommon:widget/lib/fis/data/data.js', 'wkview:widget/doc_header_new/doc_header_qrcode.js'], function(Data, Qrcode){            Qrcode.init(Data.get('WkInfo').DocInfo.docId);        });    }();!function(){        require.async(['wkcommon:widget/ui/lib/jquery/jquery.js', 'wkcommon:widget/ui/js_core/login/login.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/ui/js_core/log/log.js'], function($, Login, Data, log ){            var $el = $('.top-ads-banner .top-ads-banner-goto-cashier'),                isLogin = Data.get("WkInfo").PageInfo.isLogin;			var docId = Data.get('WkInfo').DocInfo.docId;            // tianzheng01 innerCashier enter            var WkInfo = Data.get('WkInfo');			var $bannerIcon = $('#top-ads-banner-icon');			$bannerIcon.on('click', function () {				T.lang.eventCenter.addEventListener( 'Login.Success', function(e) {					T.event.stop( e );					window.location.href = "/cashier/browse/vipcashier?cashier_code=wkview_SepEduDocFree_right0_20150914&from_doc=" + docId;				});				Login.login.verlogin(function() {					window.location.href = "/cashier/browse/vipcashier?cashier_code=wkview_SepEduDocFree_right0_20150914&from_doc=" + docId;				},null,null,null,false);			});			$el.on('click', function(){				// tianzheng01  登陆浮层优化 右上角 按钮				T.lang.eventCenter.addEventListener( 'Login.Success', function(e) {					T.event.stop( e );                    window.location.href = "/cashier/browse/vipcashier?cashier_code=31_8_9_10&from_doc=" + docId;				});				if (!isLogin) {					log.xsend(1, 100350);				}				var WkInfo = Data.get("WkInfo") || {};				if (~~WkInfo.DocInfo.is_exam_link) {			 		log.xsend(1, 100717);			 	}				Login.login.verlogin(function() {					log.xsend(1, 100350);                    window.location.href = "/cashier/browse/vipcashier?cashier_code=31_8_9_10&from_doc=" + docId;				},null,null,null,false);			});			var $ugcTestUser = $('.ugc-test-user');			$ugcTestUser.on('click', function () {				log.xsend(1, 100506);			})        });		require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/ui/lib/jquery/jquery.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/ui/lib/string/string.js', 'wkview:widget/ui/view/doc_report/doc_report.js', 'wkcommon:widget/ui/js_core/log/log.js'],function( T, $, Data, S, docReport, log){			T.lang.eventCenter.addEventListener('docCount.response', function( data ){				var html = [],value,star='<b class="ic ic-star-s-on"></b>', status = 'on',response = data.data;				if(!response || response.status !='0'){					return;				}				var WkInfo = Data.get('WkInfo');				var docInfo = WkInfo.DocInfo;				// flag 文档类型; 19代表商业文档				var flag = parseInt(docInfo.flag, 10);				if (response.qualityScore || response.float_valueAverage) {					// 新文档质量评分准					if (response.qualityScore) {						var $newIcoWkMember = $('.high-quality-doc');						value = Number(response.qualityScore).toFixed(1);						// 判断是否有vip免费文档标签(ppt无此标签)						var hasFreeDoc = true;						if ($('.new-ico-wkmember-free-doc').length == 0 || $('.new-ico-wkmember-free-doc').is(':hidden')) {							hasFreeDoc = false;						}						if (!hasFreeDoc && value >= 4) {							// 文档左侧展示优质文档标签							$newIcoWkMember.show();							// 优质文档便签不跟随页面滚动							$(window).scroll(function() {	                           var $newIcoWkMemberFather = $newIcoWkMember.parent();	                           var winTop = $('body').scrollTop() === 0 && $('html').scrollTop() ? 'html' : 'body';	                           if ($(winTop).scrollTop() > 280 && $(winTop).scrollTop() < $newIcoWkMemberFather.height() + 50) {	                               $newIcoWkMember.css({	                                   position: 'fixed',	                                   left: $newIcoWkMemberFather.offset().left-3,	                                   top: 80	                               });	                           }	                           else {	                               $newIcoWkMember.css({	                                   position: 'absolute',	                                   top: 20,	                                   left: -3	                               });	                           }	                       });						}					} else {						value = (response.float_valueAverage/2).toFixed(1);					}					var score = value;					if (flag == 19) {						html.push('<span title="'+value+'分，'+ response.valueCount +'人评">质量：');						for(var i=0;i<5;i++){							value<1 && (value<=0? (status='off') : (status='half'));							value--;							html.push(star.replace('on',status))						}						html.push('</span>');						if (score && score >= 4) {							html.push('<span class="high-quality">' + score + '</span>' + '分');						}						else {							html.push('<span class="normal-quality">' + score + '</span>' + '分');						}					}					else {						html.push('<b class="bannerScore"></b>');						if (score && score >= 4 && response.percentage) {							html.push('<span class="high-quality">' + score + '分</span>');							html.push('<span>(高于<span class="high-quality">' + response.percentage + '</span>%的文档)</span>');						}						else if (score && score >= 2 && response.percentage) {							html.push('<span class="normal-quality">' + score + '分</span>');							html.push('<span>(高于<span class="high-quality">' + response.percentage + '</span>%的文档)</span>');						}						else {							html.push('<span class="normal-quality">' + score + '分</span>');						}					}				} else {					html.push('暂无评价');				}				html.push('<i>|</i>');				html.push('<span class="ic ic-read-num"></span>' + response.viewCount + '<i>|</i>');				html.push('<span class="ic ic-down-num"></span>' + response.downloadCount);				window.viewCount = response.viewCount || 0;				window.downloadCount = response.downloadCount || 0;				$('#doc-info-0').html(html.join(''));			});			/* 试验阶段 的文档贡献者简介部分的交互 */			(function(){				var ownerDescWrap = $('.owner-desc-wrap');				var ownerDescLabel = $('.owner-desc-label');				var ownerDescPoint = ownerDescWrap.find('.ic-pointer');				var ownerDescContent = ownerDescWrap.find('.doc-desc')				var ownerLabelResize = function(){					if(ownerDescWrap.length && ownerDescPoint.length){						var l = ownerDescLabel.position().left;						l != 0 && l + 50 <= ownerDescWrap.width() ?						ownerDescPoint.css('left',l + 50).show() :						ownerDescPoint.hide();					}				};				//展开收起				ownerDescLabel.length && ownerDescLabel.delegate('.ic-arrow-up','click',function(){					ownerDescContent.slideUp();					$(this).removeClass('ic-arrow-up').addClass('ic-arrow-down');				}).delegate('.ic-arrow-down','click',function(){					$('.doc-desc-wrap').css('display','none');					$('.doc-desc-label').find('.ic-arrow-up').trigger('click');					ownerDescWrap.css('display','block');					ownerLabelResize();					ownerDescContent.slideDown();					$(this).removeClass('ic-arrow-down').addClass('ic-arrow-up');				});				$('.owner-desc-label .ic-arrow-down').trigger('click');				T.lang.eventCenter.addEventListener('Reader.zoomChange', function(){					var w = $('.reader-container').width();					$('#doc-main').css('width',(w>744 ? w : 744));					if(ownerDescWrap.length){						ownerDescWrap.css('width',w);						ownerLabelResize();					}				});			})();			/*  end */			/* 试验阶段 的文档简介部分的交互 */			(function(){				var docDescWrap = $('.doc-desc-wrap');				var docDescLabel = $('.doc-desc-label');				var docDescPoint = docDescWrap.find('.ic-pointer');				var docDescContent = docDescWrap.find('.doc-desc')				var descLabelResize = function(){					if(docDescWrap.length && docDescPoint.length){						var l = docDescLabel.position().left;						l != 0 && l + 40 <= docDescWrap.width() ?						docDescPoint.css('left',l + 40).show() :						docDescPoint.hide();					}				};				//展开收起				docDescLabel.length && docDescLabel.delegate('.ic-arrow-up','click',function(){					log.xsend(1, 100596);					docDescContent.slideUp();					$(this).removeClass('ic-arrow-up').addClass('ic-arrow-down');				}).delegate('.ic-arrow-down','click',function(){					log.xsend(1, 100596);					$('.owner-desc-wrap').css('display','none');					$('.owner-desc-label').find('.ic-arrow-up').trigger('click');					docDescWrap.css('display','block');					descLabelResize();					docDescContent.slideDown();					$(this).removeClass('ic-arrow-down').addClass('ic-arrow-up');				});				T.lang.eventCenter.addEventListener('Reader.zoomChange', function(){					var w = $('.reader-container').width();					$('#doc-main').css('width',(w>744 ? w : 744));					if(docDescWrap.length){						docDescWrap.css('width',w);						descLabelResize();					}				});			})();			/*  end */			T.dom.ready(function (){				//使title软换行				var title = $('#doc-tittle-0'),					docDescWrap = $('#docDescWrap-0'),					docDesc = $('#docDesc-0'),					descMore = docDescWrap.find('.doc-desc-more'),					timer = null,					headResize = function(){						var h = docDesc.height();						if(docDescWrap.hasClass("unfold")){							return;						}						if( h>20 ){							docDescWrap.addClass("overflow");						}else{							docDescWrap.removeClass("overflow");						}					};				// 软换行，修复之前使用wkcommon中soft_breakline php插件软换行的bug(特殊字数，如<)，改用js实现				var docDescHTML = docDesc.html();				var titleHtml = title.html();				docDescHTML && docDesc.html(S.wbr(docDescHTML));				title.html(S.wbr(titleHtml));				// 软换行end				headResize();				docDescWrap.delegate('.doc-desc-more', 'click', function(){					docDescWrap.toggleClass("unfold");					T.lang.eventCenter.dispatchEvent('viewHeader.change');					return false;				});				$(window).resize( function(){					timer && clearTimeout(timer);					timer = setTimeout(headResize,150);				});				T.lang.eventCenter.addEventListener('Reader.zoomChange',function(){					timer && clearTimeout(timer);					timer = setTimeout(headResize,150);				});			});			T.dom.ready(function () {				//举报				if(T.g("docReport-0")){					T.event.on("docReport-0","click",function(e){						T.lang.eventCenter.dispatchEvent('Report.Click',{target:this});			            T.event.stop(e);			        });				}				if(T.dom.g("docReport-copr")){					T.event.on("docReport-copr","click",function(e){						T.lang.eventCenter.dispatchEvent('Report.Click',{target:this});			            T.event.stop(e);			        });			    }			});		});	// 文档标签展示打点 wkcommon 里suggestion.js已经注册，直接触发就可以	}();!function(){        require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/ui/reader/reader.js', 'wkcommon:widget/ui/js_core/log/log.js'], function( T, Data, Player, log){            T.dom.ready( function() {                // 阅读器开始执行时间                log.xsend(1, 101170);                window.viewTime.s = new Date().getTime();                var el = T.dom.g('reader-container-1'),                    startPage = parseInt('1'),                    pageCount = parseInt('3'),                    pageRange = [startPage,Math.min(startPage + 49, pageCount)],                    needPlugins = true,                    WkInfo = Data.get('WkInfo');                if(WkInfo.DocInfo.isApi) {                    needPlugins = false;                }                window.player = Player.reader({                    type: 'doc',                    els: T.dom.query('.bd',el),                    doc_id: '5aefe29427fff705cc1755270722192e44365843',                    doc_id_update: 'd6453718de80d4d8d15a4f2a',                    pageCount: pageRange[1]- pageRange[0]+1 ,                    startPage : startPage,                    isLogin : +('0'),                    zoomLevel : 1,                    copyable : !parseInt('0'),                    pw:el.offsetWidth,                    ph:el.offsetHeight,                    container: el,                    readerVersion : '6',                    //loadAPI : config.loadAPI,                    loadingHTML : '<div class="xreader-loading-layer"></div>',                    errorHTML : '<div class="xreader-error-layer"></div>',                    needPlugins: needPlugins                });                /*                    ------------------------------                    性能监控代码：核心功能展现完成                    ------------------------------                */                if(typeof PDC != 'undefined'){PDC.mark("c_tti_renderPlayer");console.log('c_tti_renderPlayer');}                //  me.reader = {                //      setZoom : T.fn.blank,                //      create : T.fn.blank,                //      dispose : T.fn.blank                //  }                //T.lang.eventCenter.dispatchEvent('ReaderCreate.before');                log.send('view','load',{                    docId : '5aefe29427fff705cc1755270722192e44365843',                    success:1,                    docType : 'doc',                    ext : 'doc',                    fr : 'in',                    version : '6',                    cid1 : '3',                    cid2 : '63',                    cid3 : '161',                    cid4 : '0',                    ply : 'html'                });                var readerFromSetting = Data.get('WkInfo').readerFromSetting;                if(readerFromSetting){                    document.body.style.visibility = "";                }                window.player && window.player.create();                // --阅读进度--                require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkview:widget/ui/view/reader_pace/reader_pace.js'],function(T,rp){                    var bPage = '0',                        bOffset = '0',                        rPage = '0',                        rOffset = '0',                        sendCondition = ('0' == '1');                        EC = T.lang.eventCenter;                    if(sendCondition){                        EC.addEventListener('ReaderCreate.after',function(e,data){                            var reader = data.reader;                                reader.NS_IK_getPagethOnClose = function(){return reader.getPage();};                                reader.NS_IK_getPageOffset = function(){return 0;};                            var readerIns = {                                    getReader : function(){                                        return reader;                                    }                                };                            var readerPace = new rp.readerPace(readerIns);                            readerPace.sendPaceInRate();                            EC.removeEventListener('ReaderCreate.after','RP');                        },'RP');                    }                });                var  __init__ = function () {                    require.async(['wkview:widget/html_view/html_reader/html_reader.js', 'wkview:widget/html_view/html_reader/js/endPageFcShow.js', 'wkview:widget/view_recom_thirdad/endPageGoldClueAd/endPageGoldClueAd.js'], function (Reader, Fc, Gc){                        // 判断屏幕大小大于1024则宽度为1075小于则980，zoom比例分别为1.1与1                        var zoomLv =  1,                            WkInfo = Data.get('WkInfo'),                            urlQueryWidth = T.url.getQueryValue(location.href, 'width');                        var reader = window.reader = new Reader.html_reader({                            el:'reader-container-1',                            doc_id : '5aefe29427fff705cc1755270722192e44365843',                            doc_id_update : 'd6453718de80d4d8d15a4f2a',                            //doc_id_update : 'd6453718de80d4d8d15a4f2a',                            htmlUrls: '{\x22ttf\x22:[{\x22pageIndex\x22:1,\x22param\x22:\x22&md5sum=e0997f600c6707c6c31e2909c5ec09d8&range=0-33923&sign=05ccd73721\x22},{\x22pageIndex\x22:2,\x22param\x22:\x22&md5sum=e0997f600c6707c6c31e2909c5ec09d8&range=33924-55726&sign=05ccd73721\x22},{\x22pageIndex\x22:3,\x22param\x22:\x22&md5sum=e0997f600c6707c6c31e2909c5ec09d8&range=55727-&sign=05ccd73721\x22}],\x22json\x22:[{\x22pageIndex\x22:1,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.json?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2Fcbfc4fa14d9232f13bd62c9bb88062f2ea3568888dcc422bd1fd2aa4ef7532fa&x-bce-range=0-21971&token=e13f690aba1bb492bd7ecae55a95d7fc9534fb7289b72a3b6213d89d1f655e13&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:2,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.json?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2Fcbfc4fa14d9232f13bd62c9bb88062f2ea3568888dcc422bd1fd2aa4ef7532fa&x-bce-range=21972-34161&token=e13f690aba1bb492bd7ecae55a95d7fc9534fb7289b72a3b6213d89d1f655e13&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:3,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.json?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2Fcbfc4fa14d9232f13bd62c9bb88062f2ea3568888dcc422bd1fd2aa4ef7532fa&x-bce-range=34162-&token=e13f690aba1bb492bd7ecae55a95d7fc9534fb7289b72a3b6213d89d1f655e13&expire=2017-09-13T12:24:16Z\x22}],\x22png\x22:[{\x22pageIndex\x22:1,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.png?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2F9ad305ce67ae7d2464c6cc8da9d370076df2a7f2b18ded27830f9b9e2e6a7ab6&x-bce-range=0-23873&token=65ef5da1bedab78a54bb0c0e1ad0de8fb1bdc2278848e4d51617f5eec2b18483&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:2,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.png?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2F9ad305ce67ae7d2464c6cc8da9d370076df2a7f2b18ded27830f9b9e2e6a7ab6&x-bce-range=23874-104340&token=65ef5da1bedab78a54bb0c0e1ad0de8fb1bdc2278848e4d51617f5eec2b18483&expire=2017-09-13T12:24:16Z\x22},{\x22pageIndex\x22:3,\x22pageLoadUrl\x22:\x22https:\\\/\\\/wkbos.bdimg.com\\\/v1\\\/docconvert9063\\\/\\\/wk\\\/e0997f600c6707c6c31e2909c5ec09d8\\\/0.png?responseCacheControl=max-age%3D3888000&responseExpires=Sat%2C%2028%20Oct%202017%2019%3A24%3A16%20%2B0800&authorization=bce-auth-v1%2Ffa1126e91489401fa7cc85045ce7179e%2F2017-09-13T11%3A24%3A16Z%2F3600%2Fhost%2F9ad305ce67ae7d2464c6cc8da9d370076df2a7f2b18ded27830f9b9e2e6a7ab6&x-bce-range=104341-&token=65ef5da1bedab78a54bb0c0e1ad0de8fb1bdc2278848e4d51617f5eec2b18483&expire=2017-09-13T12:24:16Z\x22}]}',                            type : Data.get('WkInfo').docType['1'],                            startPage : parseInt('1'),                            pageCount : parseInt('3'),                            totalPageNum : parseInt('3'),                            isPayMent : parseInt('0'),                            ispaided : parseInt(''),                            shareElId : 'shareMore-1',                            zoomLevel : zoomLv,                            reader : window.player,                            version : '6',                            bookmark : [+'0',+'0'],                            isPrivate : !!(''),                            isLogin : +('0'),                            uid : '1',                            toPage : +'1',                            payment : +"0",                            needPlugins: needPlugins                        });                        var ownCustomer = false;                        // 大会员免广告                                                                                var jobHunt = +'';                            if (!jobHunt) {                                Fc.endPageFcShow();                            }                            Gc.endPageGoldClueAd();                                            });                };                if(T.browser.ie &&  T.browser.ie < 8 ){                   T.dom.ready(__init__);                }else{                    __init__();                }                // 文档质量3.0小流量下载按钮统计                T.lang.eventCenter.addEventListener('smallFlowDownBtn', function () {                    log.xsend(1, 101167);                })            });        });    }();!function(){    require.async(['wkview:widget/next_doc/next_doc.js'], function(ND){        ND();    });}();!function(){    // tianzheng01 愚人节活动接口 愚人节活动需要购买按钮弹出下载浮层 临时添加上下载的注册时间  活动过后 可以删除    require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkview:widget/ui/view/down_doc/down_doc.js', 'wkcommon:widget/lib/fis/data/data.js'],function(T,Down,Data){    	var down = Down.downDocCreate();    	T.lang.eventCenter.addEventListener('download.doc',function(e,data){    		data = data||{};    		var from = data.from || false;    		if(from==='payDialog'){    			down.getFile();    		}else{    			//down.start(Data.get('WkInfo'));                down.start();    		}    	});    });    }();!function(){        require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkview:widget/ui/view/doc_share/doc_share.js', 'wkview:widget/ui/view/pay_org_vip/pay_org_vip.js', 'wkcommon:widget/ui/payCheck/payCheck.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/ui/js_core/login/login.js', 'wkcommon:widget/ui/js_core/log/log.js', 'wkcommon:widget/ui/js_core/util/util.js', 'wkview:widget/ui/util/util.js', 'wkview:widget/html_view/html_reader/html_reader.js', 'wkcommon:widget/ui/js_core/login/login.js', 'wkcommon:widget/ui/js_core/dialogCashier/dialogCashier.js'],function(T, docShare,payOrgVip,Pay, Data, Login, log , util, viewUtil,Reader, Login, dialogCashier){            //起始页 by robben，给config用            Data.set('readerStartPage', parseInt('1'));            //绑定一个隐藏或显示购会员免费下载按钮事件，供pay.js使用            T.lang.eventCenter.addEventListener('pack.button.hide',function(){                                $('.pack-pay').css('display','inline-block');                            });			var readerVersion = 3;			T.dom.ready(function(){                    // tianzheng01  登陆浮层优化 立即加入VIP 按钮                    var docId = '5aefe29427fff705cc1755270722192e44365843';                    // tianzheng01 innerCashier enter                    var WkInfo = Data.get('WkInfo');                    $('.btn-login-joinvip-rightnow').on('click', function(){                        T.lang.eventCenter.addEventListener( 'Login.Success', function(e) {                            T.event.stop( e );                            var isDialogCashier = +Data.get("isDialogCashier");                            window.location.href = "/cashier/browse/vipcashier?cashier_code=31_8_9_97&from_doc=5aefe29427fff705cc1755270722192e44365843";                        });                        var isLogin = Data.get("WkInfo").PageInfo.isLogin;                        if (!isLogin) {                            log.xsend(1, 100349);                        }                        Login.login.verlogin(function() {                            log.xsend(1, 100349);                            var isDialogCashier = +Data.get("isDialogCashier");                            window.location.href = "/cashier/browse/vipcashier?cashier_code=31_8_9_97&from_doc=5aefe29427fff705cc1755270722192e44365843";                        },null,null,null,false);                    })					//分享					var share = docShare.shareToCreate({						el         : T.dom.q('reader-tools-share')[0],						view       : "viewReader-1",						copy       : "copyCode-1",						panel      : "panel-1",						closePanel : "closePanel-1",						toggleSize : ["normalSize-1", "bigSize-1"],						codeText   : "readerCode-1",						copyResult : "copyResult-1"					});					//显示更多分享					share.show();					//分享统计					var getShareSize = function(){						var normal = T.dom.g('normalSize-1').checked;						if(normal){							return 'small';						}						return 'big';					};					T.event.on('viewReader-1','click',function(e){						log.send('view','share',{							'subtype':'sharepreview',							'size' : getShareSize(),							'pos':'top',							'copyright' : 3,							'readerVersion' : readerVersion						});					});					T.event.on('copyCode-1','click',function(e){						log.send('view','share',{							'subtype':'sharecopy',							'size' : getShareSize(),							'pos':'top',							'copyright' : 3,							'readerVersion' : readerVersion						});					});					function resizeBody(){						var viewWidth = T.page.getViewWidth(),							bdWidth = T.dom.query('#bd .body')[0].offsetWidth,							page = T.dom.g('doc');							if(bdWidth>viewWidth){								page.style.width = bdWidth + 'px';							}else{								page.style.width = 'auto';							}							page = null;					}					T.lang.eventCenter.addEventListener('Reader.zoomChange',function(e){						var docBodyEl = T.dom.query('#bd .body')[0],                            bdWrap = T.dom.query('#bd .bd-wrap')[0],							crubmsWrap = T.dom.query('#bd .crubms-wrap');                            if(crubmsWrap.length > 1) {                                crubmsWrap = crubmsWrap[0];                                crubmsWrap.style.width = docBodyEl.offsetWidth + 'px';                            }                            bdWrap.style.minWidth = docBodyEl.offsetWidth + 'px';							resizeBody();					});					T.lang.eventCenter.addEventListener('Reader.WindowResize',resizeBody);					T.lang.eventCenter.addEventListener('Reader.fullScreenResize',resizeBody);                    //付费文档展现量统计                    if(parseInt('0',10)){                        log.send('view','payview',{                            docId : '5aefe29427fff705cc1755270722192e44365843',                            docType : 'doc',							ext : 'doc',							fr : 'in',							version : '6',							cid1 : '3',							cid2 : '63',							cid3 : '161',							cid4 : '0',							ply : 'html',                            pn:'3'                        });                    }					toolsBarLogItem ="",toolsBarLogMode ="";					var toolsBarLogFunc = util.debounce(function(){							log.send('view','toolbarClick',{										area : 'toolbar',										mode : toolsBarLogMode,										item : toolsBarLogItem,										docType : 'doc',										ext : 'doc',										fr : 'in',										version : '6',										cid1 : '3',										cid2 : '63',										cid3 : '161',										cid4 : '0',										ply : 'html'							});						},1000);					T.lang.eventCenter.addEventListener('ReaderToolsBar.itemClick',function(e,data){							var	isFullScreen = data.setting.isFullScreen;						 	toolsBarLogItem = data.name;							toolsBarLogMode = isFullScreen ? "fullscreen" : "normalscreen";							if(toolsBarLogItem === "fullscreen"){								toolsBarLogMode = isFullScreen ? "normalscreen" : "fullscreen";								isFullScreen ? toolsBarLogItem = "fullscreen" : toolsBarLogItem = "normalscreen";							}							toolsBarLogFunc();					});					var currentPageLog = +"1",						startReaderTime = (new Date()).getTime(),						readerTime = 0,						htmlreadLog = function(page,time){							log.send('view','htmlread',{										docId : '5aefe29427fff705cc1755270722192e44365843',										docType : 'doc',										ext : 'doc',										page : page,										time : time/1000,										fr : 'in',										version : '6',										cid1 : '3',										cid2 : '63',										cid3 : '161',										cid4 : '0',										ply : 'html'							});						},						browseLog = function(page){							log.send('view','browse',{										docId : '5aefe29427fff705cc1755270722192e44365843',										docType : 'doc',										ext : 'doc',										page : page,										fr : 'in',										version : '6',										cid1 : '3',										cid2 : '63',										cid3 : '161',										cid4 : '0',										ply : 'html'							});						};					T.lang.eventCenter.addEventListener('Reader.scroll',function(e,data){						var page = data.currentPage;						if(page === currentPageLog){return;}						var currentTime = (new Date()).getTime();					//	if((currentTime-startReaderTime)>1000){					//		htmlreadLog(currentPageLog,currentTime-startReaderTime);					//	}						if((currentTime-startReaderTime)>500){							browseLog(currentPageLog);						}						currentPageLog = page;						startReaderTime = currentTime;					});                    // 阅读器内部调用统计方法                    // 原viewlog.js中方法，由于在fis:data加载之前执行导致报错                    (function() {                        T.lang.eventCenter.addEventListener('view-log', function(e, data) {                            var method = data.method || 'send',                                args = data.args || [],                                DocInfo = Data.get('WkInfo').DocInfo;                            if( (method === 'send' || method === 'nslog') && args.length > 2 ) {                                util.mix(args[2] || {}, {                                    'cid1' : DocInfo.cid1,                                    'cid2' : DocInfo.cid2,                                    'cid3' : DocInfo.cid3,                                    'cid4' : DocInfo.cid4,                                    'docId' : DocInfo.docId,                                    'doctype' : DocInfo.docType                                },  true);                            }                            log[method] && log[method].apply(this, args);                        });                    })();				// 支付	pay todo:									window.name="";					document.body.focus();					T.event.on(window,'onbeforeunload',function(e){						var page = reader.getPage(),							offset = 0;							viewUtil.saveViewedPage('5aefe29427fff705cc1755270722192e44365843',page,offset);					});					T.cookie.remove('newMark',{path:'/view/'});                    T.lang.eventCenter.addEventListener('do-login', function(e) {                        Login.login.verlogin(function() {                            location.reload();                        });                    });				});		});	}();!function(){	require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/ui/lib/jquery/jquery.js', 'wkview:widget/html_view/html_reader/js/page.js', 'wkcommon:widget/ui/js_core/log/log.js', 'wkcommon:widget/ui/js_core/login/login.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkview:widget/ui/detectImgBlock/detectImgBlock.js'],function(T, $, Page, log, Login, Data, detect){        // 双十一天猫广告展现量        if (T.dom.g('double11')) {            log.xsend(1, 100653);        }		var banner = T.dom.g('html-reader-banner-2');		if(banner){            $('body').on('click', '.banner-block', function(e){                var url = $('.banner-block').attr('data-url');                if( url && e.target.nodeName.toLowerCase() != 'a'){                    window.open( url, '_blank' );                }            });			T.lang.eventCenter.addEventListener('Reader.zoomChange',function(){				setTimeout(function(){				if(T.browser.ie){					banner.style.position = 'static';					banner.style.position = 'relative';				}				},100);			});		}        var goBtnClick = 0;        var isFullScreen = 0;        $('.hidden-doc-banner').hide();        $('body').on('click', '.banner-download', function () {            log.xsend(1, 101166);            $('.reader-end-download').find('.reader-download').trigger('click');        });        $('body').on('click', '.btn-buy-rightnow', function () {            var WkInfo = Data.get('WkInfo');            var isLogin = WkInfo.PageInfo.isLogin;            if (!isLogin) {                Login.login.verlogin(function () {                    // window.location.href = '/org/browse/report?fr=btn&id=' + WkInfo.DocInfo.docId;                });            }            else {                window.location.href = '/org/browse/report?fr=btn&cashier_code=buy_report_doc&id=' + WkInfo.DocInfo.docId;            }        });        $('body').on('click', '.goBtn', function () {            goBtnClick = 1;            $('.hidden-doc-banner').show();            $('.more-btn-banner').hide();            T.lang.eventCenter.dispatchEvent('Reader.initZoom');            if (isFullScreen) {                $('.reader-fullScreen').trigger('click');            }            log.xsend(1, 100582);            $(window).trigger('doc:clickShowAll');            if ($('#html-reader-AD-3t4').length > 0) {                // 广告请求被拦截统计                detect.requestBlock();                // 广告被拦截统计                detect.domBlock($('#html-reader-AD-3t4'));            }            if ($('#html-reader-AD-4t5').length > 0) {                // 广告请求被拦截统计                detect.requestBlock();                // 广告被拦截统计                detect.domBlock($('#html-reader-AD-4t5'));            }        });        T.lang.eventCenter.addEventListener('Reader.zoomChange', function() {            if ($('.more-btn-banner').length && goBtnClick === 1) {                setTimeout(function () {                    T.lang.eventCenter.dispatchEvent('readMoreBtn.after');                }, 500);            }        });        T.lang.eventCenter.addEventListener('InFullScreen.after', function () {            isFullScreen = 1;        });        T.lang.eventCenter.addEventListener('OutFullScreen.after', function () {            isFullScreen = 0;        });        var reader = window.reader;        var insertAds = function(){            reader = window.reader;            if(!reader){                setTimeout(insertAds, 200);                return;            }            // 1和2页之间            var bannerEl = T.dom.g('html-reader-banner-2');            if(bannerEl){                reader.insert(bannerEl,1);            }            // 2和3页间的广告实验            var adBannerEl = T.dom.g('html-reader-AD-5');            if(adBannerEl){                reader.insert(adBannerEl, 2);            }            // 3和4页间的广告实验            var ad3to4 = T.dom.g('html-reader-AD-3t4');            if(ad3to4){                reader.insert(ad3to4, 3);            }            // 4和5页间的广告            var ad4to5 = T.dom.g('html-reader-AD-4t5');            if(ad4to5){                reader.insert(ad4to5, 4);            }            var moreBanner = T.dom.g('html-reader-go-more');            if (moreBanner) {                reader.insert(moreBanner, 3);                log.xsend(1, 100581);            }            /*// 2和3页之间            var adBannerEl = T.dom.g('html-reader-AD-2');            if(adBannerEl) {                T.ajax.get('/org/interface/getadlist?t='+Math.round((new Date()).getTime()/6000),function (xhr,data) {                    console.log('1');                    var ret = data ? T.json.parse(data) : data;                    var orgList=ret.data.list;                    var targetOrg={};                    //这里先写死一个ID                    var pageOrgID=$(adBannerEl).attr('orgID');                    var has=false;                    for (var i = orgList.length - 1; i >= 0; i--) {                        if(pageOrgID==orgList[i].org_id){                            targetOrg=orgList[i];                            has=true;                            break;                        }                    };                    if(has){                        console.log('2');                        $(adBannerEl).find('a').attr('href',targetOrg.url);                        $(adBannerEl).find('.event-banner').css('background-image',"url("+targetOrg.img_link+")");                        reader.insert(adBannerEl,2);                    }else{                        console.log('3');                        $(adBannerEl).remove();                    }                });            }            // 2和3页之间的网盟广告            var ourAd2 = T.dom.g( 'html-reader-our-ad-2' );            ourAd2 && reader.insert( ourAd2, 2 );            var ourAd3 = T.dom.g( 'html-reader-our-ad-3');            ourAd3 && reader.insert( ourAd3, 3 );*/        };        if(reader){            $(insertAds);        }else{            T.lang.eventCenter.addEventListener('ReaderCreate.after', insertAds);        }        // 质量评分3.0改版指针对非商业文档                T.lang.eventCenter.addEventListener('docCount.response', function( data ){            var html = [],value,star='<b class="ic ic-star-s-on"></b>', status = 'on',response = data.data;        if(!response || response.status !='0'){            return;        }        if (response.qualityScore || response.float_valueAverage) {            // 新文档质量评分准            if (response.qualityScore) {                value = Number(response.qualityScore).toFixed(1);            }            else {                value = (response.float_valueAverage/2).toFixed(1);            }            var score = value;            html.push('<b class="bannerScore"></b>');            if (score && score >= 4 && response.percentage) {                html.push('<span class="high-quality">' + score + '分</span>');                html.push('<span>(高于<span class="high-quality">' + response.percentage + '</span>%的文档)</span>');            }            else if (score && score >= 2 && response.percentage) {                html.push('<span class="normal-quality">' + score + '分</span>');                html.push('<span>(高于<span class="high-quality">' + response.percentage + '</span>%的文档)</span>');            }            else {                html.push('<span class="normal-quality">' + score + '分</span>');            }        } else {            html.push('暂无评价');        }        // window.viewCount = response.viewCount || 0;        // window.downloadCount = response.downloadCount || 0;        $('.banner-more-info').append(html.join(''));        });        	});}();!function(){	require.async(['wkcommon:widget/ui/lib/jquery/jquery.js', 'wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkview:widget/kg_recommend/util/config.js'], function ($, T, Data, config) {        // 在原来的view页面底部——你可能喜欢（stru_recom.tpl）模块没有数据就派发kgRecommendview        T.lang.eventCenter.addEventListener('kgRecommendview', kgRecommendviewRender);        function kgRecommendviewRender () {            /*            // 小流量            var smallflow = 0;            var baiduId = T.cookie.get('BAIDUID');            var smallArray = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0];            if (baiduId) {                var index =  parseInt(baiduId.substr(0, 6), 16) % 10;                smallflow = smallArray[index];            }            if (baiduId && (baiduId === '8A6137356C0DD7F85B862877FCC6FBCA:FG=1'                || baiduId === '37E481AA5139B02C5EB9EA157E2FC782:FG=1'                || baiduId === 'C11BCFCCC8E8E22492EA68DA7634DE2F:FG=1')) {                smallflow = 1;            }            if (smallflow === 0) {                return;            }            */            // 全局变量            Data.set( "docId", '5aefe29427fff705cc1755270722192e44365843');            // 请求总接口，判断是否有知识图谱相关推荐模块            var url = config.url[config.type['getrelinfo']];            var options = {                doc_id: '5aefe29427fff705cc1755270722192e44365843'            };            $.getJSON(url + '?callback=?', options).then(function(data) {                if (data.code === 0) {                    require.async(['wkview:widget/kg_recommend/kg_recommend.js'], function(kgRecommend) {                        // 入口文件                        new kgRecommend.main({                            'el': '.kgrecommend-wrap',                            'docId': '5aefe29427fff705cc1755270722192e44365843',                            'data': data                        });                    });                }            });        }	});}();!function(){        require.async(['wkcommon:widget/ui/lib/jquery/jquery.js', 'wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/ui/js_core/mvp/template/template.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/ui/js_core/tabs/tabs.js', 'wkcommon:widget/ui/js_core/log/log.js', 'wkview:widget/ui/view/star/star.js', 'wkcommon:widget/ui/js_core/util/util.js', "wkcommon:widget/ui/js_core/eventCenter/eventCenter.js"],function($, T,Template,GlobalData,Tabs,Log,Star,Util, E){            var priceText = function(item) {                var goodsType = item.goods_type,                docPrice = parseInt(item.price, 10),                payPrice = parseInt(item.pay_price, 10) / 100;                var docTicket= parseInt(item.docTicket, 10);                if (!goodsType || goodsType == 1) {                    if (docTicket == 0) {                        return '免费';                    } else {                        if (docTicket < 99) {                            return docTicket + '下载券';                        } else {                            return docTicket + '+';                        }                    }                }                if (goodsType == 2) {                    return payPrice.toFixed(2) + '元';                }                if (goodsType == 3) {                    return '限免';                }            };            $('body').on('click', '.fcClick', function (e) {                // 凤巢ppt广告存在下你可能喜欢点击统计                if ($('.fc-ppt').text()) {                    log.xsend(1, 101106, {index: 5});                }            });            var renderBottomRec =  function(){                T.ajax.post('/rec/getstrrec','doc_id_code=5aefe29427fff705cc1755270722192e44365843&query_word=' + encodeURIComponent(''),function(xhr,responseText){                        var json = T.json.parse(responseText),                        DocTypeList = GlobalData.get('WkInfo').docType;                        if(json['status']['code']!== 0){                            var eventCenter = E.eventCenter;                            eventCenter.fire('call-fengchao-ad');                            T.lang.eventCenter.dispatchEvent('kgRecommendview');                            return;                        }                        var data = json['data']['srs_res'],tmpData=[];                        for(var i=0,len = data.length;i<len;i++){                            if(data[i]['related_doc_infos'].length>4){                                tmpData.push(data[i]);                            }                        }                        data = tmpData;                        if(data.length<3){return;}                        var util={                            star:Star.star,                            cutString:Util.cutString,                            encodeHTML : T.string.encodeHTML,                            priceText : priceText                        };                        data = data.slice(0,8);                        var block = T.dom.g('bottom-doc-list-3'),                            tagContainer = T.dom.q('tagList',block,'div')[0],                            contentContainer = T.dom.q('tableList',block,'div')[0],                            tagTamplate = T.dom.g('tagList-template-3').value,                            contentTamplate = T.dom.g('tableList-template-3').value;                            contentContainer.innerHTML = Template.template(contentTamplate,{data:data,doc_srs_strategy:json['data']['doc_srs_strategy'],doc_srs_tag:json['data']['doc_srs_tag'],docType:DocTypeList,util:util});                            tagContainer.innerHTML = Template.template(tagTamplate,{data:data,util:util,doc_srs_strategy:json['data']['doc_srs_strategy'],doc_srs_tag:json['data']['doc_srs_tag']});                            block.style.display='block';                        Tabs.tabsCreate({                            'el' : block,                            'bindEvent' : 'click',                            'controlChildTag' : 'a',                            'contentChildTag' : 'table'                        });                        //下载后推荐数据                        T.lang.eventCenter.dispatchEvent("recDataForDownLoad", {struData: data});                        Log.send('view','show',{'from':'srs','ply':'html','doc_srs_strategy':json['data']['doc_srs_strategy'],'doc_srs_tag':json['data']['doc_srs_tag']});                        // 新增模块展现打点（模块底部漏出才打点，反复浏览不打点）                        T.dom.ready(function () {                            var hasDot = false;                            function scrollHandler() {                                var elOffsetTop = $(block).offset().top;                                var elHeight = $(block).height();                                var wHeight = $(window).height();                                var scrollTop = $(window).scrollTop();                                if (scrollTop + wHeight >= elOffsetTop + elHeight) {                                    if (!hasDot) {                                        Log.xsend(1, 101203);                                    }                                    hasDot = true;                                }                            }                            // 你可能喜欢模块                            $(window).on('scroll.bottomDoclist', scrollHandler);                        });                });            };                        T.dom.ready(renderBottomRec);                    });    }();!function(){	require.async('wkview:widget/comment/comment.js');}();!function(){    require.async(['wkview:widget/ad/commonAd/commonAd.js'], function (page) {        page.init();    });}();!function(){		require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/ui/js_core/login/login.js', 'wkcommon:widget/ui/js_core/log/log.js', 'wkcommon:widget/ui/lib/store/store.js', 'wkcommon:widget/lib/fis/data/data.js', 'wkcommon:widget/ui/lib/jquery/jquery.js'],function(T,Login,log,Store, Data, $){			log.xsend(1,100601);			var login = Login.login;			var islogin = $('.doc-upload').data('login');			if (islogin == true) {				$('.btn-upload').attr('href', '/new');				$('.btn-upload').attr('target', '_blank');			}			T.event.on("uploadDoc-3","click",function(e){				login.verlogin(					function(){					},null,null,					{'actionName':"upload", 'fromMod': "upload"}				);			});			$('.btn-upload-new').on('click', function () {				var WkInfo = Data.get("WkInfo") || {};				if (~~WkInfo.DocInfo.is_exam_link) {			 		log.xsend(1, 100718);			 	}			});		});	}();!function(){    require.async(['wkcommon:widget/ui/js_core/log/log.js'],function(log){        log.xsend(1, 100621);            });}();!function(){	require.async(['wkcommon:widget/lib/fis/data/data.js'], function (Data) {	Data.set("orgDocId",'5aefe29427fff705cc1755270722192e44365843');	});	require.async(['wkview:widget/jigou_tuijian/jigou_tuijian.js'], function () {	});}();!function(){    require.async(['wkview:widget/ad/viewSideDownAd/viewSideDown.js'],function(viewSideDown){        // viewSideDown.init();    });}();!function(){    require.async(["wkcommon:widget/360tip/360tip.js"],function(e){var r=e.showTopTip,t={referer:""};new r(t).create()});;}();!function(){        var bds_config = {            "bdPic": "//gss0.baidu.com/70cFsjip0QIZ8tyhnq/img/iknow/wenku/erweima2001.jpg",            "snsKey":{"tsina":2273341579,"tqq":801199444},            "bdText":"我正在@百度文库 阅读【传智播客：作业PHP数据库-如何实现站点统计】这篇文章，推荐给大家！用文库客户端可以免财富值下载该文档，客户端下载地址：http://" + location.host + "/apps?fr=2001 想立即阅读该文档点这里："        };        document.getElementById('bdshell_js').src = "//edu-wenku.bdimg.com/v1/pc/bdshare/static/api/js/share.js?cdnversion=" + new Date().getHours();        //重写qzone分享事件        require.async(['wkcommon:widget/lib/tangram/base/base.js'],function(T){            //重写qzone分享事件            var qzones = T.q("sns_qzone");            if(qzones){                T.array.each(qzones, function(item, i){                    T.event.on(item, "mouseover", function(){                        T.ajax.post(                            "/user/interface/qqShareOption",                            "app=bind_status",                            function(xhr,responseText){                                try{                                    var errno = eval('(' + responseText + ')');                                    //如果已绑定                                    if(errno.list.join(",").indexOf("qq") > -1){                                        if(item.innerHTML.indexOf('分享到QQ空间')<0){                                            item.innerHTML = "";                                        }                                        qzones[i].onclick = function(){                                            window.open("http://" + location.host + "/user/browse/qqShare?url=" + T.string.encodeHTML(location.href), "blank");                                        }                                    }                                }catch(ex){}                            }                        );                    });                });            }        });    }();!function(){    require.async(['wkcommon:widget/ui/lib/jquery/jquery.js', 'wkview:widget/fix_searchbar/fix_searchbar.js', 'wkcommon:widget/lib/fis/data/data.js'], function( $, FSB, Data) {        $( function() {            new FSB.fixSearchBar( {                evaluateBoxId: '#doc-evaluate-mod',                evaluateTagId: '#doc-main',                evaluatePreCl: '.reder-share-model'            } );            $('.top-down-load-container').addClass('view_change_test');        } );    } );}();!function(){    require.async(['wkview:widget/ad_taishan/ad_taishan.js'], function (adTaishan) {        T.lang.eventCenter.addEventListener('ReaderCreate.after', function () {            adTaishan.init();        });    });}();!function(){		require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/ui/js_core/log/log.js', 'wkcommon:widget/ui/lib/jquery/jquery.js', 'wkcommon:widget/ui/js_core/util/util.js', 'wkcommon:widget/ui/js_core/eventCenter/eventCenter.js'], function(T, log, $, util, E){			$.ajax({				url: '/doc/interface/gaokaozhenti?docid=5aefe29427fff705cc1755270722192e44365843',				success: function (json) {					if (json.data.flag) {						log.xsend(1, json.data.act_id);					}				}			});			//阅读器统计			log.send('view','htmlview',{				docId : '5aefe29427fff705cc1755270722192e44365843',				docType : 'doc',				cid1 : '3',				cid2 : '63',				cid3 : '161',				cid4 : '0',				totalPageNum : '3',				pn : '1'			});			/*浏览历史记录请求*/						util.windowResize(function(){				resize();			});			setTimeout(function(){				resize();			}, 1000);
+    <!--为降低整个页面的首屏加载时间，已将此处的广告代码模块迁移到html_view.tpl，在IE下耗时效果显然，降低了近一半 ,chrom 降低200ms左右。注意：以后添加广告代码不要在这里加 20160921 by huanglifen-->			// 下掉评论上部凤巢广告	        // var eventCenter = E.eventCenter;	        // eventCenter.on('call-fengchao-ad', function(){	        // 	if( navigator.userAgent.indexOf("MSIE 6.0") < 0 ){	        // 		window.arrBaiduAds = [];			//         var script = document.createElement('script');			//         script.src = 'http://a.baidu.com/ecom?di=819&tn=SE_ecomw01_3070u6es&tm=baiduASPT819S&internal=1&word=传智播客：作业PHP数据库-如何实现站点统计';			//         $('body').append( script );			//        	var lock = setInterval(function(){			//        		if(arrBaiduAds.length){			//        			var fengchao = arrBaiduAds[819];			// 	        	$('#fengchao_guanggao').html( fengchao ).show();			// 	        	clearInterval(lock);			//        		}			//        	}, 100);	        // 	}	        // });	    	       	function resize(){	       		$('#html-reader-our-ad-1').css( 'width', $('.reader-container').css('width') );				$('#ggbtm').css('width', $('.reader-container').css('width') );	       	}		});	}();!function(){    require.async(['wkcommon:widget/ui/lib/jquery/jquery.js', 'wkcommon:widget/ui/lib/async_widget/async_widget.js', 'wkcommon:widget/ui/lib/browser/browser.js'],function($,w,browser){        $(function(){            $('.async-widget').widgetAsync({                effect: (browser.ie && browser.ie < 8) ? 'show' : 'slideDown',                effect_speed : false            });        });    });    }();!function(){        require.async(['wkcommon:widget/ui/lib/BigPipe/BigPipe.js', 'wkview:widget/crmAd/crmAd3.js', 'wkview:widget/fengchao_right/fengchao_right.js', 'wkview:widget/crmAd/crmAd2.js', 'wkview:widget/crm_multi/crm_multi.js', 'wkcommon:widget/lib/tangram/base/base.js', 'wkview:widget/ui/detectImgBlock/detectImgBlock.js', 'wkview:widget/ui/detectImgBlock/hijack.js'], function(BigPipe, AT, FR,pageRun, CrmMulti, T, Detect, Hijack){        var isDetect = Detect.detectImgBlock();        var fetchList = [];        fetchList.push({url: '/browse/widget/viewrecom?pagelets[]=view-like-recom&doc_id=5aefe29427fff705cc1755270722192e44365843', id: 'view-like-recom'});        var pipeList = function () {            this.next = function () {                if (fetchList.length) {                    var obj = fetchList.shift();                    BigPipe.fetch(obj.url, obj.id);                }else{                    $.event.trigger('orgRightRecon');                    $.event.trigger('rightDocLoadEnd');                }
+    <!-- 大会员免广告 -->
+    if ($('.other-like-doc').height() > 10) {
+        $.when(isDetect).then(function (data) {
+            new AT({ele: $('#guess-like-doc'), pid: 7});
+        });
+    } else {
+        $.when(isDetect).then(function (data) {
+            FR.init();
+        });
+    }
+    new Hijack();
+    <!--为降低整个页面的首屏加载时间，将广告代码模块从other_proc.tpl迁移到这里，在IE下耗时效果显然，降低了近一半 ,chrom 降低200ms左右 20160921 by huanglifen-->
+    <!-- 大会员免广告 -->
+    var crmMulti = new CrmMulti({title: '传智播客：作业PHP数据库-如何实现站点统计'});
+    var loadAds = function () {
+        new pageRun({ele: $('#wkad18'), pid: 18});
+        new pageRun({
+            ele: $('#wkad21'),
+            pid: 21
+        });                        // 新版样式小流量                        var random = Math.random();                        crmMulti.show2To3(function () {                            new AT({                                ele: $('#wkad21-2'),                                pid: 5                            });                        }, random);                        if( navigator.userAgent.indexOf("MSIE 6.0") < 0 && (new Date()).getTime() > 1427904000000){                            crmMulti.showDocBtm(function () {                                new pageRun({                                    ele: $('#wkgg'),                                    pid: 3                                });                            }, random);                        }                        // 四五页网盟广告                        if ($('#html-reader-AD-4t5').length > 0) {                            crmMulti.show4To5(random);                        }                                                new AT({                            ele: $('#ggbtm'),                            pid: 2                        });                    };                    $.when(isDetect).then(function (data) {                        loadAds();                    });                            }        };        var pipeObj = new pipeList();        BigPipe.on('pagerendercomplete', pipeObj.next, this);        if (fetchList.length) {            var obj = fetchList.shift();            BigPipe.fetch(obj.url, obj.id);        }    });        // 今日推荐    require.async(['wkcommon:widget/lib/tangram/base/base.js', 'wkcommon:widget/ui/lib/jquery/jquery.js', 'wkview:widget/crmAd/crmAd.js'], function(T, $){        var resize = function () {            var wrap = $('.daily-recom-wrap');            var w = $('.reader-container').width();            wrap.css('width', w);            if (w < 900) {                wrap.addClass('small-wrap');                if (T.browser.ie == 6 && w < 650) {}            }            else {                wrap.removeClass('small-wrap');            }        };        resize();        T.lang.eventCenter.addEventListener('Reader.zoomChange',resize);    });    }();!function(){    require.async(['wkcommon:widget/ui/js_core/log/log.js'],function(log){        log.xsend(1, 100737);    });}();</script>
+</html>
