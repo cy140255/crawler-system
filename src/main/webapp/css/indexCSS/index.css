@@ -20,3 +20,92 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.son{
+    position: absolute;
+    left: 32%;
+}
+.icon-user{
+    background-image: url("../../images/icons/regist.png");
+}
+
+.icon-password{
+    background-image: url("../../images/icons/password.png");
+}
+
+.icon-confirmpassword{
+    background-image: url("../../images/icons/confirm.png");
+}
+
+.icon{
+    position: absolute;
+    left: 0;
+    z-index: 5;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 55px;
+    height:55px;
+    top: 10px;
+    left: 5px;
+}
+
+
+.ui-dialog{
+    width: 450px;height: auto;
+    border: 1px solid #d5d5d5;;
+    background: white;
+    position: absolute;
+    z-index: 9000;
+    top: 300px;left: 950px;
+}
+
+
+.ui-dialog-title{
+    height: 48px;
+    line-height: 48px;
+    padding: 0px 20px;color: #535353;
+    font-size: 16px;
+    border-bottom: 1px solid #efefef;
+    background: #f5f5f5;
+    cursor: move;
+}
+
+.ui-dialog-chat{
+    overflow-y :auto;
+    overflow:auto;
+    width: 300px;
+    border: 1px solid red;
+    height: 300px;
+    float: right;
+}
+
+
+
+
+.ui-dialog-mag{
+    width: 148px;
+    height: 335px;
+    border: 1px solid yellow;
+    float: right;
+
+}
+
+
+.ui-dialog-ent{
+    width: 300px;
+    height: 30px;
+    border: 1px solid lawngreen;
+    float: right;
+
+}
+
+
+
+
+.ui-dialog-closebutton{
+    width: 16px;height: 16px;display: block;
+    position: absolute;top: 12px;right: 20px;
+    background: url(../../images/close_def.png) no-repeat;cursor: pointer;
+
+}
+.ui-dialog-closebutton:hover{background:url(../../images/close_hov.png);}
