@@ -199,7 +199,7 @@ $(document).ready(function(){
 
                      if (obj.length>1){
                          for(var i = 0;i< obj.length-1;i++){
-                             $("#ul-menu").append("<li><a id='user-"+i+"' data-toggle='' onclick='chat("+i+")' >"+obj[i].userName+"</a></li>");
+                             $("#ul-menu").append("<li><a id='user-"+i+"' data-toggle='' onclick='getFriendName("+i+")' >"+obj[i].userName+"</a></li>");
                          }
                      }else {
                          $("#ul-menu").append("<li><a id='user-1'  data-toggle=''>暂无好友</a></li>");
@@ -237,7 +237,7 @@ function getUserName() {
 
                 if (obj.length>1){
                     for(var i = 0;i< obj.length-1;i++){
-                        $("#ul-menu").append("<li><a id='user-"+i+"' data-toggle='' onclick='chat("+i+")' >"+obj[i].userName+"</a></li>");
+                        $("#ul-menu").append("<li><a id='user-"+i+"' data-toggle='' onclick='getFriendName("+i+")' >"+obj[i].userName+"</a></li>");
                     }
                 }else {
                     $("#ul-menu").append("<li><a id='user-1'  data-toggle='' onclick=''>暂无好友</a></li>");
@@ -344,7 +344,7 @@ getUserName();
     }
 
     function connect(username) {
-        var url = "ws://139.196.140.45:8080/crawler-system/websocket/"+username;
+        var url = "ws://192.168.112.1:8080/crawler-system/websocket/"+username;
         if ('WebSocket' in window) {
             websocket = new WebSocket(url)
         } else {
@@ -357,7 +357,7 @@ getUserName();
         websocket.onmessage = function (event) {
             var date = new Date().format('yyyy-MM-dd hh:mm:ss');
             $(".ui-dialog-chat").append("<div style='width: 280px;height: 20px;text-align: left' >" +
-                "<span>"+friend+"("+date+")"+"</span>" +
+                "<span>"+friendName+"("+date+")"+"</span>" +
                 "</div>" +
                 "<div style=\"width: auto;height: 20px;text-align: left\" >\n" +
                 "<span>" + event.data + "</span>" +
@@ -370,7 +370,7 @@ getUserName();
 
     $("#btn-ent").click(function () {
         var date = new Date().format('yyyy-MM-dd hh:mm:ss');
-        var message = $("#input-message").val()+","+friend;
+        var message = $("#input-message").val()+","+friendName;
         $(".ui-dialog-chat").append("<div style='width: 280px;height: 20px;text-align: right;' >" +
             "<span>"+$('#a-username').html()+"("+date+"):</span>" +
             "</div>" +
@@ -384,13 +384,11 @@ getUserName();
 
 
 });
-var  friend ;
-
-function chat(id) {
-    id = 'user-'+id;
+var  friendName ;
+function getFriendName(id) {
+    var id = 'user-'+id;
     $("#ui-dialog").css("display",'block');
-    friend = $('#'+id+'').html();
-    $("#hidden").val(friend);
+    friendName = $('#'+id+'').html();
 }
 
 
