@@ -134,42 +134,44 @@ $(document).ready(function(){
 
 
     $("#btn-register").click(function () {
+            var password = $("#register-password").val();
+            var confirmpassword = $("#register-confirmpassword").val();
+            if (password != confirmpassword){
+                $("#register-confirmpassword").popover('show');
+            }else {
+                $.ajax({
+                    type: "POST",
+                    url: "register.do",
+                    cache: true,
+                    data: {userName: $("#register-username").val(), password: $("#register-password").val()},
+                    success: function (data) {
+                        if (data != null) {
+                            var obj = eval(data);
+                            $('#a-register').css("display", "none");
+                            $('#a-login').css("display", "none");
+                            $('#a-username').html(obj[obj.length - 1].userName);
+                            $('#a-username').css("display", "block");
+                            $('#a-exit').css("display", "block");
 
-          // window.location.href = "register.do?userName="+$("#register-username").val()+"&password="+$("#register-password").val();
-        $.ajax({
-            type:"POST",
-            url:"register.do",
-            cache:true,
-            data:{userName:$("#register-username").val(),password:$("#register-password").val()},
-            success:function (data) {
-                if (data!=null){
-                    var obj = eval(data);
-                    $('#a-register').css("display","none");
-                    $('#a-login').css("display","none");
-                    $('#a-username').html(obj[obj.length-1].userName);
-                    $('#a-username').css("display","block");
-                    $('#a-exit').css("display","block");
+                            if (obj.length > 1) {
+                                for (var i = 0; i < obj.length - 1; i++) {
+                                    $("#ul-menu").append("<li><a id='user-" + i + "' data-toggle=''>" + obj[i].userName + "</a></li>");
+                                }
+                            } else {
+                                $("#ul-menu").append("<li><a id='user-1'  data-toggle=''>暂无好友</a></li>");
 
-                    if (obj.length>1){
-                        for(var i = 0;i< obj.length-1;i++){
-                            $("#ul-menu").append("<li><a id='user-"+i+"' data-toggle=''>"+obj[i].userName+"</a></li>");
+
+                            }
+                            $("#modal-1").modal("hide");
+
+                        } else {
+                            alert("服务器异常，请稍后重试");
                         }
-                    }else {
-                        $("#ul-menu").append("<li><a id='user-1'  data-toggle=''>暂无好友</a></li>");
-
-
                     }
-                    $("#modal-1").modal("hide");
+                })
 
-                }else {
-                    alert("服务器异常，请稍后重试");
-                }
+
             }
-        })
-
-
-
-
 
      })
 
