@@ -97,15 +97,16 @@ public class LoginController {
               HttpSession session = request.getSession();
         userService.register(userName,password);
 
-        //伪装成有好友，方便前端统一写法，传给前端的是一个json数组，而不是单个就送
+        //伪装成有好友，方便前端统一写法，传给前端的是一个json数组，而不是单个json
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(userName);
         userInfo.setPassword(password);
        List<UserInfo> users = new ArrayList<>();
        users.add(userInfo);
+       session.setAttribute("users",users);
        //这里结束
         try{
-            session.setAttribute("users",users);
+            session.setAttribute("users",JsonUtil.JsonUtil(users)); //将 users的 json格式存在session中
             return JsonUtil.JsonUtil(users);
         }catch (Exception e){
 
@@ -125,7 +126,6 @@ public String loginIn(@QueryParam("userName")String userName, @QueryParam("passw
             if (nonNull(userInfo)) {
                 List<UserInfo> userInfos = userService.getFriend(userInfo.getId());
                 userInfos.add(userInfo);
-                session.setAttribute("username",userName);
                 session.setAttribute("users",JsonUtil.JsonUtil(userInfos));
                 return JsonUtil.JsonUtil(userInfos);
 
