@@ -143,14 +143,10 @@ $(document).ready(function(){
             data:{userName:$("#register-username").val(),password:$("#register-password").val()},
             success:function (data) {
                 if (data!=null){
-
                     var obj = eval(data);
-                    alert(obj);
                     $('#a-register').css("display","none");
                     $('#a-login').css("display","none");
-
                     $('#a-username').html(obj[obj.length-1].userName);
-                    alert(obj[obj.length-1].userName);
                     $('#a-username').css("display","block");
                     $('#a-exit').css("display","block");
 

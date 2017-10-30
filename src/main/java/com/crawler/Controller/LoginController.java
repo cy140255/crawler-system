@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import javax.ws.rs.QueryParam;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -95,14 +96,17 @@ public class LoginController {
     public String register(@QueryParam("userName")String userName, @QueryParam("password")String password,HttpServletRequest request){
               HttpSession session = request.getSession();
         userService.register(userName,password);
-        session.setAttribute("username",userName);
+
+        //伪装成有好友，方便前端统一写法，传给前端的是一个json数组，而不是单个就送
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(userName);
         userInfo.setPassword(password);
-
+       List<UserInfo> users = new ArrayList<>();
+       users.add(userInfo);
+       //这里结束
         try{
-            String json = JsonUtil.JsonUtil(userInfo);
-            return json;
+            session.setAttribute("users",users);
+            return JsonUtil.JsonUtil(users);
         }catch (Exception e){
 
         }
