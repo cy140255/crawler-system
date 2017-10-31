@@ -14,5 +14,8 @@
         SELECT * FROM  Friend WHERE  userid = #{userId}
     </select>
 
+    <select id="checkUserName" resultType="com.crawler.Entity.UserInfo">
+        SELECT * FROM  userInfo WHERE  userName = #{username}
+    </select>
 
 </mapper>

@@ -17,7 +17,6 @@ $(document).ready(function(){
         var second = Math.floor(tempSecond-((day*24*60*60))-(hour*3600)-(minute*60));
         var date =day+"天"+hour+"时"+minute+"分"+second+"秒";
         $("#p1").html(date);
-
     }
 
 
@@ -132,12 +131,38 @@ $(document).ready(function(){
         $("#register-confirmpassword").popover('hide');
     })
 
-
     $("#btn-register").click(function () {
+        var $btn = $(this).button('loading')
+            var username = $("#register-username").val();
             var password = $("#register-password").val();
             var confirmpassword = $("#register-confirmpassword").val();
+
+            <!-- 判断input 标签内是否有填入数据， 如果没有则标红显示-->
+            if (username == null || username == ""){
+                $("#register-username").css("border","1px solid red");
+
+            }
+            if (password == null ||password == ""){
+                $("#register-password").css("border","1px solid red");
+
+            }
+
+            if (confirmpassword == null ||confirmpassword == ""){
+                $("#register-confirmpassword").css("border","1px solid red");
+
+            }
+
+            if (username == null || username == ""
+                ||password == null ||password == ""
+                ||confirmpassword == null ||confirmpassword == ""
+            ){
+                $btn.button('reset');
+                return;
+            }
+            <!-- 这里结束，并放开确定按钮，并跳出程序 -->
             if (password != confirmpassword){
                 $("#register-confirmpassword").popover('show');
+                $btn.button('reset');
             }else {
                 $.ajax({
                     type: "POST",
@@ -145,7 +170,9 @@ $(document).ready(function(){
                     cache: true,
                     data: {userName: $("#register-username").val(), password: $("#register-password").val()},
                     success: function (data) {
+
                         if (data != null) {
+                            $("#modal-1").modal("hide");
                             var obj = eval(data);
                             $('#a-register').css("display", "none");
                             $('#a-login').css("display", "none");
@@ -162,10 +189,11 @@ $(document).ready(function(){
 
 
                             }
-                            $("#modal-1").modal("hide");
-
+                            $btn.button('reset');
+                            $("#modal-3").modal("hide");
                         } else {
                             alert("服务器异常，请稍后重试");
+                            $btn.button('reset');
                         }
                     }
                 })
@@ -173,10 +201,37 @@ $(document).ready(function(){
 
             }
 
-     })
+     });
+
+
+
 
 
     $("#btn-login").click(function () {
+        var $btn = $(this).button('loading');
+        var username = $("#login-username").val();
+        var password = $("#login-password").val();
+
+
+        <!-- 判断input 标签内是否有填入数据， 如果没有则标红显示-->
+        if (username == null || username == ""){
+            $("#login-username").css("border","1px solid red");
+
+        }
+
+        if (password == null || password == ""){
+            $("#login-password").css("border","1px solid red");
+
+        }
+
+        if (username == null || username == "" ||password == null || password == ""){
+            $btn.button('reset');
+            return;
+        }
+
+        <!--这里结束，并放开确定按钮，并跳出程序-->
+
+
         $.ajax({
             type:"POST",
             url:"loginIn.do",
@@ -185,6 +240,7 @@ $(document).ready(function(){
             success:function (data) {
                  if(data=="error"){
                     alert("账号不存在或密码错误，请重试！");
+                     $btn.button('reset');
                 }else {
                      var obj = eval(data);
 
@@ -204,7 +260,7 @@ $(document).ready(function(){
 
 
                      }
-
+                     $btn.button('reset');
                      $("#modal-2").modal("hide");
                         connect(obj[obj.length-1].userName);
 
@@ -307,7 +363,6 @@ getUserName();
         var e= event||window.event;
         var mousex = e.pageX;
         var mousey = e.pageY;
-
         var movex = 0;
         var movey = 0;
         if (isDraging === true) {
@@ -342,7 +397,7 @@ getUserName();
     }
 
     function connect(username) {
-        var url = "ws://192.168.112.1:8080/crawler-system/websocket/"+username;
+        var url = "ws://localhost:8080/crawler-system/websocket/"+username;
         if ('WebSocket' in window) {
             websocket = new WebSocket(url)
         } else {
@@ -379,6 +434,57 @@ getUserName();
         websocket.send(message);
     })
 
+
+
+
+
+    $("#register-username").blur(function () {
+        if ( $("#register-username").val()!= null &&  $("#register-username").val()!= ""){
+            $("#register-username").css("border","");
+            $("#img-loading").css("display",'block');
+            $.ajax({
+                type:"GET",
+                url:"checkUserName.do",
+                data:{username:$("#register-username").val()},
+                success:function (data) {
+                    if (data == "success"){
+                        $("#img-loading").attr("src",'images/pass.png');
+                        $("#span-msg").css("display","block").css("color","#1afa29").html("该账号可以使用");
+                        $("#btn-register").attr("disabled", false);
+
+                    }else {
+                        $("#img-loading").attr("src",'images/unpass.png');
+                       $("#span-msg").css("display","block").css("color","#d81e06").html("该账号已被使用");
+                        $("#btn-register").attr("disabled", true);
+                    }
+
+                }
+            })
+
+        }
+    });
+    $("#register-password").blur(function () {
+        if ( $("#register-password").val()!= null &&  $("#register-password").val()!= ""){
+            $("#register-password").css("border","");
+        }
+    });
+    $("#register-confirmpassword").blur(function () {
+        if ( $("#register-confirmpassword").val()!= null &&  $("#register-confirmpassword").val()!= ""){
+            $("#register-confirmpassword").css("border","");
+        }
+    });
+
+    $("#login-username").blur(function () {
+        if ( $("#login-username").val()!= null &&  $("#login-username").val()!= ""){
+            $("#login-username").css("border","");
+        }
+    });
+
+    $("#login-password").blur(function () {
+        if ( $("#login-password").val()!= null &&  $("#login-password").val()!= ""){
+            $("#login-password").css("border","");
+        }
+    });
 
 
 });

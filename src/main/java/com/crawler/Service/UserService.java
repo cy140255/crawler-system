@@ -54,4 +54,12 @@ public class UserService {
         return userInfos;
     }
 
+    public Boolean checkUserName(String userName){
+        UserInfo userInfo =  userMapper.checkUserName(userName);
+        if (isNull(userInfo)){
+            return true;
+        }
+
+        return false;
+    }
 }

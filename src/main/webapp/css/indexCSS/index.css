@@ -14,6 +14,13 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#modal-3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 #modal-5{
     position: absolute;
     top: 48%;
@@ -109,3 +116,8 @@ body{
 
 }
 .ui-dialog-closebutton:hover{background:url(../../images/close_hov.png);}
+
+
+#span-msg {
+    font-family: STXihei;
+}

@@ -103,7 +103,6 @@ public class LoginController {
         userInfo.setPassword(password);
        List<UserInfo> users = new ArrayList<>();
        users.add(userInfo);
-       session.setAttribute("users",users);
        //这里结束
         try{
             session.setAttribute("users",JsonUtil.JsonUtil(users)); //将 users的 json格式存在session中
@@ -151,6 +150,18 @@ public String loginIn(@QueryParam("userName")String userName, @QueryParam("passw
     public String exit(HttpSession session){
         session.setAttribute("users",null);
         return "success";
+    }
+
+
+
+    @RequestMapping(value = "/checkUserName.do",method = RequestMethod.GET)
+    @ResponseBody
+    public String checkUserName(@QueryParam("username")String username){
+       Boolean flag = userService.checkUserName(username);
+        if (flag==true) {
+            return "success";
+        }
+        return "error";
     }
 
 }
