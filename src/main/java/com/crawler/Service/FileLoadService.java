@@ -176,6 +176,7 @@ public class FileLoadService {
 
         Pattern pattern = Pattern.compile("<img([^>]*)\\s*src=('|\\\")([^'\\\"]+)('|\\\")([>])|url([(].*?)([)])");
         Matcher matcher = pattern.matcher(html);
+
         while (matcher.find()) {
             try {
                 String getAllImages = matcher.group();

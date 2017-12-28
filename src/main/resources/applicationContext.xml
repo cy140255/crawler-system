@@ -20,7 +20,7 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
-        <property name="url" value="jdbc:mysql://139.196.140.45:3306/crawler-system"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/crawler-system"/>
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
     </bean>

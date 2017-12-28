@@ -59,7 +59,9 @@ public class UserService {
         if (isNull(userInfo)){
             return true;
         }
-
         return false;
     }
+
+
+
 }

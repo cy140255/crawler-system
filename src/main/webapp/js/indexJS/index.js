@@ -1,6 +1,8 @@
 $(document).ready(function(){
     a();
     countdown();
+    timer();
+    setInterval(timer,1000);
     setInterval(countdown,1000);
     function a() {
         $("#myModal").modal("show");
@@ -16,9 +18,53 @@ $(document).ready(function(){
         var minute = Math.floor((tempSecond-((day*24*60*60))-(hour*3600))/60);
         var second = Math.floor(tempSecond-((day*24*60*60))-(hour*3600)-(minute*60));
         var date =day+"天"+hour+"时"+minute+"分"+second+"秒";
+
         $("#p1").html(date);
+
     }
 
+    function timer() {
+        var nowDate = new Date();
+        var startDate = new Date("2000-01-01 00:00:00");
+        var nowYear = nowDate.getFullYear();
+        var startYear =startDate.getFullYear();
+        <!-- 计算相差年份-->
+        var tempYear = nowYear - startYear;
+        var tempDay = 0;
+        for (var i = 1;i<= tempYear;i++){
+            <!-- 每一个闰年天数加1-->
+             tempDay  =  tempDay+isLeapYear(startYear+i);
+        }
+
+
+        var lastDate = nowDate.getTime()-startDate.getTime();
+        var tempSecond = parseInt(lastDate/1000);
+        var day = Math.floor(tempSecond/(24*60*60));
+
+
+        var hour = Math.floor((tempSecond-(day*24*60*60))/3600);
+        var minute = Math.floor((tempSecond-(day*24*60*60)-(hour*3600))/60);
+        var second = Math.floor(tempSecond-(day*24*60*60)-(hour*3600)-(minute*60));
+
+
+        var year = Math.floor(day/365);
+        if (year>=1){
+            <!-- 总天数减去年数×365再减去闰年数-->
+            day = Math.floor(tempSecond/(24*60*60))-tempYear*365-tempDay;
+        }
+        var date = tempYear+"年"+day+"天"+hour+"时"+minute+"分"+second+"秒";
+
+        $("#span-footer").html(date);
+
+    }
+    <!--处理闰年-->
+    function isLeapYear(year) {
+        if (year%4==0&&year%100!=0||year%400==0) {
+            return 1;
+        }else {
+            return 0;
+        }
+    }
 
     $("#button").click(function () {
         var value =  $("#input").val();
@@ -164,11 +210,12 @@ $(document).ready(function(){
                 $("#register-confirmpassword").popover('show');
                 $btn.button('reset');
             }else {
+                var username = htmlEncodeJQ($("#register-username").val());
                 $.ajax({
                     type: "POST",
                     url: "register.do",
                     cache: true,
-                    data: {userName: $("#register-username").val(), password: $("#register-password").val()},
+                    data: {userName: username, password: $("#register-password").val()},
                     success: function (data) {
 
                         if (data != null) {
@@ -183,11 +230,11 @@ $(document).ready(function(){
                             if (obj.length > 1) {
                                 for (var i = 0; i < obj.length - 1; i++) {
                                     $("#ul-menu").append("<li><a id='user-" + i + "' data-toggle=''>" + obj[i].userName + "</a></li>");
+                                    $("#ul-menu").append("<li><a style='color: #3399FF' id='' data-toggle='' onclick='' >添加好友</a></li>");
                                 }
                             } else {
                                 $("#ul-menu").append("<li><a id='user-1'  data-toggle=''>暂无好友</a></li>");
-
-
+                                $("#ul-menu").append("<li><a style='color: #3399FF' id='' data-toggle='' onclick='' >添加好友</a></li>");
                             }
                             $btn.button('reset');
                             $("#modal-3").modal("hide");
@@ -202,14 +249,9 @@ $(document).ready(function(){
             }
 
      });
-
-
-
-
-
     $("#btn-login").click(function () {
         var $btn = $(this).button('loading');
-        var username = $("#login-username").val();
+        var username = htmlEncodeJQ($("#login-username").val())
         var password = $("#login-password").val();
 
 
@@ -236,7 +278,7 @@ $(document).ready(function(){
             type:"POST",
             url:"loginIn.do",
             scriptCharset: 'utf-8',
-            data:{userName:$("#login-username").val(),password:$("#login-password").val()},
+            data:{userName:username,password:$("#login-password").val()},
             success:function (data) {
                  if(data=="error"){
                     alert("账号不存在或密码错误，请重试！");
@@ -254,9 +296,12 @@ $(document).ready(function(){
                      if (obj.length>1){
                          for(var i = 0;i< obj.length-1;i++){
                              $("#ul-menu").append("<li><a id='user-"+i+"' data-toggle='' onclick='getFriendName("+i+")' >"+obj[i].userName+"</a></li>");
+                             $("#ul-menu").append("<li><a style='color: #3399FF' id='' data-toggle='' onclick='addFriend()' >添加好友</a></li>");
+
                          }
                      }else {
                          $("#ul-menu").append("<li><a id='user-1'  data-toggle=''>暂无好友</a></li>");
+                         $("#ul-menu").append("<li><a style='color: #3399FF' id='' data-toggle='' onclick='addFriend()' >添加好友</a></li>");
 
 
                      }
@@ -272,7 +317,6 @@ $(document).ready(function(){
 
 
 function getUserName() {
-
     $.ajax({
         type:"GET",
         url:"getUserName.do",
@@ -292,9 +336,11 @@ function getUserName() {
                 if (obj.length>1){
                     for(var i = 0;i< obj.length-1;i++){
                         $("#ul-menu").append("<li><a id='user-"+i+"' data-toggle='' onclick='getFriendName("+i+")' >"+obj[i].userName+"</a></li>");
+                        $("#ul-menu").append("<li><a style='color: #3399FF' id='' data-toggle='' onclick='addFriend()' >添加好友</a></li>");
                     }
                 }else {
                     $("#ul-menu").append("<li><a id='user-1'  data-toggle='' onclick=''>暂无好友</a></li>");
+                    $("#ul-menu").append("<li><a style='color: #3399FF' id='' data-toggle='' onclick='addFriend()' >添加好友</a></li>");
 
 
                 }
@@ -454,7 +500,7 @@ getUserName();
 
                     }else {
                         $("#img-loading").attr("src",'images/unpass.png');
-                       $("#span-msg").css("display","block").css("color","#d81e06").html("该账号已被使用");
+                        $("#span-msg").css("display","block").css("color","#d81e06").html("该账号已被使用");
                         $("#btn-register").attr("disabled", true);
                     }
 
@@ -487,6 +533,42 @@ getUserName();
     });
 
 
+
+
+    function htmlEncodeJQ ( str ) {
+        return $('<span/>').text( str ).html();
+    }
+
+    function htmlDecodeJQ ( str ) {
+        return $('<span/>').html( str ).text();
+    }
+
+
+
+    $("#btn-add").click(function () {
+        $("#img-loading-add").css("display","block");
+        $.ajax({
+            type:'get',
+            url:'addFriend.do',
+            data:{username:$("#add-username").val()},
+            success:function (data) {
+                if (data == 'true'){
+                    $("#strong").html("已发送好友邀请")
+                    $("#modal-3").modal("hide");
+                    $("#modal-4").modal("show");
+                }
+                if (data=="false"){
+                    $("#strong").html("未能查到该用户");
+                    $("#modal-4").modal("show");
+                    $("#img-loading-add").css("display","none");
+                    setTimeout('$("#modal-4").modal("hide")',2000);
+                }
+            }
+
+        });
+
+    });
+
 });
 var  friendName ;
 function getFriendName(id) {
@@ -495,7 +577,9 @@ function getFriendName(id) {
     friendName = $('#'+id+'').html();
 }
 
-
+function addFriend() {
+   $("#modal-3").modal('show');
+}
 
 
 

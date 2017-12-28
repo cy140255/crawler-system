@@ -37,7 +37,6 @@ public class WebSocket {
         }catch (Exception e){
             System.out.print("发生了一个错误");
         }
-
     }
 
 

@@ -30,8 +30,6 @@ import static java.util.Objects.nonNull;
  * Created by 14025 on 2017/8/29.
  */
 
-@SessionAttributes({"username"})
-
 @Controller
 public class LoginController {
     @Autowired
@@ -97,7 +95,7 @@ public class LoginController {
               HttpSession session = request.getSession();
         userService.register(userName,password);
 
-        //伪装成有好友，方便前端统一写法，传给前端的是一个json数组，而不是单个json
+        //伪装成有好友，方便前端统一写法，传给前端的是一个json数组，而不是单个json，单个json表示没有好友
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(userName);
         userInfo.setPassword(password);
@@ -142,7 +140,7 @@ public String loginIn(@QueryParam("userName")String userName, @QueryParam("passw
     public String ajax(HttpServletRequest request){
         HttpSession session = request.getSession();
 
-        return (String)session.getAttribute("users");
+        return (String)session.getAttribute("users"); //然后这里取值 根据key值取
     }
 
     @RequestMapping(value = "/exit.do",method = RequestMethod.GET)
@@ -158,10 +156,23 @@ public String loginIn(@QueryParam("userName")String userName, @QueryParam("passw
     @ResponseBody
     public String checkUserName(@QueryParam("username")String username){
        Boolean flag = userService.checkUserName(username);
-        if (flag==true) {
+        if (flag == true) {
             return "success";
         }
         return "error";
     }
 
+
+
+    @RequestMapping(value = "/addFriend.do",method = RequestMethod.GET)
+    @ResponseBody
+    public String addFriend(@QueryParam("username")String username){
+        Boolean flag = userService.checkUserName(username);
+        if (flag == true){
+            return "false";
+        }else {
+            return "true";
+        }
+
+    }
 }
