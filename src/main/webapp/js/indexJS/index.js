@@ -10,7 +10,7 @@ $(document).ready(function(){
     }
     function countdown () {
         var nowDate = new Date();
-        var endDate = new Date("2018-01-01 00:00:00");
+        var endDate = new Date("2018-05-01 00:00:00");
         var lastDate = endDate.getTime()-nowDate.getTime();
         var tempSecond = parseInt(lastDate/1000);
         var day = Math.floor(tempSecond/(24*60*60));
