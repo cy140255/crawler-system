@@ -24,6 +24,7 @@ public class ConfirmController {
     @ResponseBody
 
     public String idConfirm(@QueryParam("id") String id) {
+
         return confirmService.idConfirm(id);
     }
 }
