@@ -22,6 +22,7 @@ public class ConfirmController {
 
     @RequestMapping(value = "/idConfirm.do", method = RequestMethod.POST)
     @ResponseBody
+
     public String idConfirm(@QueryParam("id") String id) {
         return confirmService.idConfirm(id);
     }
